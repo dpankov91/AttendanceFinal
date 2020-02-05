@@ -1,107 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" stylesheets="@../css/styleDmitri.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <MenuBar stylesheets="@../css/styleDmitri.css" VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" stylesheets="@../css/styleDmitri.css" VBox.vgrow="ALWAYS">
-      <children>
-            <TextField alignment="CENTER" layoutX="181.0" layoutY="98.0" prefHeight="52.0" prefWidth="237.0" styleClass="fontMario" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="98.0">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="200.0" prefWidth="606.0" styleClass="topPane" stylesheets="@../css/styleDmitri.css" />
+      <AnchorPane layoutY="193.0" prefHeight="212.0" prefWidth="606.0" styleClass="root" stylesheets="@../css/styleDmitri.css" />
+      <AnchorPane prefHeight="251.0" prefWidth="456.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0">
+         <children>
+            <Button layoutX="397.0" layoutY="161.0" mnemonicParsing="false" styleClass="btn" stylesheets="@../css/styleDmitri.css" text="Log Out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+            <Button layoutX="331.0" layoutY="161.0" mnemonicParsing="false" styleClass="btn" text="Back" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="85.0" />
+            <Button layoutX="188.0" layoutY="110.0" mnemonicParsing="false" styleClass="btn" text="Validate" />
+            <TextField layoutX="144.0" layoutY="69.0">
                <font>
-                  <Font size="22.0" />
-               </font></TextField>
-            <Button fx:id="backButton" layoutX="488.0" layoutY="334.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="97.0" text="Back" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="130.0">
-               <font>
-                  <Font size="22.0" />
+                  <Font size="13.0" />
                </font>
-               <styleClass>
-                  <String fx:value="buttonMario" />
-                  <String fx:value="fontMario" />
-               </styleClass></Button>
-            <Button fx:id="logOutButton" layoutX="552.0" layoutY="334.0" mnemonicParsing="false" text="Log Out" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttonMario" />
-                  <String fx:value="fontMario" />
-               </styleClass></Button>
-            <Label layoutX="231.0" layoutY="23.0" prefHeight="52.0" prefWidth="162.0" styleClass="fontMario" text="INSERT TODAY'S KEY" textAlignment="CENTER" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="20.0">
-               <font>
-                  <Font size="35.0" />
-               </font>
-            </Label>
-            <Button layoutX="14.0" layoutY="322.0" mnemonicParsing="false" styleClass="overviewButton" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+            </TextField>
+            <Label layoutX="154.0" layoutY="29.0" prefHeight="17.0" prefWidth="113.0" stylesheets="@../css/styleDmitri.css" text="ENTER TODAY'S KEY" />
+            <Button layoutY="108.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" styleClass="cardPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
                <graphic>
-                  <ImageView fitHeight="130.0" fitWidth="130.0" styleClass="overviewButton">
+                  <ImageView fitHeight="83.0" fitWidth="82.0" styleClass="cardPane">
                      <image>
                         <Image url="@../pictures/overviewButton.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="265.0" layoutY="177.0" mnemonicParsing="false" text="Validate">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttonMario" />
-                  <String fx:value="fontMario" />
-               </styleClass>
-            </Button>
-      </children>
-         
-    </AnchorPane>
-  </children>
-</VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
