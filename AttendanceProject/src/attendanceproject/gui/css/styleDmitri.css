@@ -56,7 +56,6 @@ and open the template in the editor.
 
 .mainFont
 {
-    -fx-background-color: black;
     -fx-font-size: 20px;
     -fx-font-family: 'Merriweather';
     -fx-text-fill: black;
@@ -64,7 +63,6 @@ and open the template in the editor.
 
 .adjustableFont
 {
-    -fx-background-color: black;
     -fx-font-family: 'Merriweather';
     -fx-text-fill: black;
 }
