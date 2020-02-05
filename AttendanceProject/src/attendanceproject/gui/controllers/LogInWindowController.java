@@ -7,7 +7,11 @@ package attendanceproject.gui.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -16,6 +20,13 @@ import javafx.fxml.Initializable;
  */
 public class LogInWindowController implements Initializable {
 
+    @FXML
+    private TextField txtUsername;
+    @FXML
+    private TextField txtPassword;
+    @FXML
+    private Button btnLogIn;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +34,9 @@ public class LogInWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void clickLogIn(ActionEvent event) {
+    }
     
 }
