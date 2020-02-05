@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 5, 2020, 9:43:32 AM
+    Author     : dpank
+*/
+
+.root
+{
+    -fx-background-color: #CBF9FF;
+}
+
+.cardPane
+{
+    -fx-background-color: #FFFFF8;
+    -fx-background-radius: 8px;
+}
+
+.topPane
+{
+    -fx-background-color: #58CFFF;
+}
