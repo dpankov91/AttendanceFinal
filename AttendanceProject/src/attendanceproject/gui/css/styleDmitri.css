@@ -19,6 +19,9 @@ and open the template in the editor.
 {
     -fx-background-color: #FFFFF8;
     -fx-background-radius: 8px;
+    -fx-border-style: solid;
+    -fx-border-radius: 8px;
+    -fx-border-color: #C4CCFF;
 }
 
 .topPane
@@ -46,12 +49,18 @@ and open the template in the editor.
     -fx-background-color: #3366ff;
     
 }
+
 .btn
 {
     -fx-background-color: #58CFFF;
     -fx-font-size: 14px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+}
+.btn2:hover
+{
+    -fx-border-style: solid;
+    -fx-border-color: #58CFFF;
 }
 
 .mainFont
