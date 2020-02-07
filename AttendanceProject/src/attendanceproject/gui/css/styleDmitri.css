@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
 
 .root
 {
@@ -75,3 +76,18 @@ and open the template in the editor.
     -fx-font-family: 'Merriweather';
     -fx-text-fill: black;
 }
+
+.panePass
+{
+    -fx-background-color: #80d2d8;
+}
+
+.lblpassword
+{
+    -fx-font-size: 14px;
+    -fx-font-family: 'Cabin';
+    -fx-text-fill: black;
+}
+
+
+
