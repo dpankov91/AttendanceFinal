@@ -32,7 +32,7 @@
          <children>
             <ImageView fitHeight="212.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Bilder/GeneratekeysIcon.jpg" />
+                  <Image url="@../pictures/GeneratekeysIcon.jpg" />
                </image>
             </ImageView>
          </children>
