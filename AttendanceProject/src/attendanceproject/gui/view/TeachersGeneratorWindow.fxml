@@ -31,7 +31,20 @@
       <AnchorPane layoutY="25.0" prefHeight="106.0" prefWidth="600.0" styleClass="topPane" stylesheets="@../css/styleDmitri.css" />
       <AnchorPane layoutX="92.0" layoutY="78.0" prefHeight="278.0" prefWidth="430.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css">
          <children>
+
             <Label layoutX="184.0" layoutY="139.0" text="Date" AnchorPane.topAnchor="135.0">
+
+            <ImageView fitHeight="212.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/GeneratekeysIcon.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="100.0" layoutY="225.0" prefHeight="175.0" prefWidth="400.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css">
+         <children>
+            <Label layoutX="186.0" layoutY="23.0" text="Date">
+
                <font>
                   <Font size="18.0" />
                </font>
