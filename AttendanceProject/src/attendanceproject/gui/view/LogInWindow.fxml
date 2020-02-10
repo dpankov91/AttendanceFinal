@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Icon?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -42,7 +41,6 @@
                         <String fx:value="btn2" />
                      </styleClass>
                   </JFXButton>
-                  <Icon content="EMPTY" layoutX="25.0" layoutY="36.0" />
                </children>
             </AnchorPane>
          </children>
