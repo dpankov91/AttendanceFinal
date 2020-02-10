@@ -89,5 +89,11 @@ and open the template in the editor.
     -fx-text-fill: black;
 }
 
+.generatorCard
+{
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+}
+
 
 
