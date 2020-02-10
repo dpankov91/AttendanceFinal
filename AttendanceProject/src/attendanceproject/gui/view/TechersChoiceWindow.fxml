@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/styleDmitri.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutY="262.0" prefHeight="138.0" prefWidth="600.0" style="-fx-background-color: #58CFFF;">
          <children>
-            <Button layoutX="254.0" layoutY="47.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" styleClass="buttonLogOut" stylesheets="@../css/styleDmitri.css" text="Log Out" />
+            <JFXButton buttonType="RAISED" layoutX="257.0" layoutY="48.0" prefHeight="43.0" prefWidth="86.0" ripplerFill="#f299ec" style="-fx-background-color: #660066;" text="Log Out" textFill="#e2eb35">
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font>
+            </JFXButton>
          </children></AnchorPane>
-      <Button layoutX="363.0" layoutY="83.0" mnemonicParsing="false" styleClass="circle" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="83.0" />
-      <Button layoutX="103.0" layoutY="86.0" mnemonicParsing="false" styleClass="circle" stylesheets="@../css/styleDmitri.css" AnchorPane.leftAnchor="102.0" AnchorPane.topAnchor="85.0" />
+      <Label layoutX="235.0" layoutY="32.0" prefHeight="54.0" prefWidth="130.0" text="Welcome !" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="27.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="365.0" layoutY="87.0" prefHeight="162.0" prefWidth="157.0" ripplerFill="#5ce050" styleClass="circle" text="Go to preview" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="85.0">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="85.0" layoutY="80.0" styleClass="circle" text="Generate Key" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="349.0" AnchorPane.topAnchor="85.0">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
