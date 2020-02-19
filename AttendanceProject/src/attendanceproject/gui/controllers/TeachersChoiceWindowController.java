@@ -6,29 +6,25 @@
 package attendanceproject.gui.controllers;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author dpank
  */
-public class TeachersEditPasswordWindowController implements Initializable {
+public class TeachersChoiceWindowController implements Initializable {
 
     @FXML
-    private JFXTextField txtNewPassword;
+    private JFXButton btnLogOut;
     @FXML
-    private JFXTextField txtConfirmNewPassword;
+    private JFXButton btnGoToOverview;
     @FXML
-    private JFXButton btnSave;
-    @FXML
-    private Button btnBack;
+    private JFXButton btnGoToKey;
 
     /**
      * Initializes the controller class.
@@ -39,11 +35,15 @@ public class TeachersEditPasswordWindowController implements Initializable {
     }    
 
     @FXML
-    private void saveNewPassword(ActionEvent event) {
+    private void clickLogOut(ActionEvent event) {
     }
 
     @FXML
-    private void clickGoBack(ActionEvent event) {
+    private void clickGoToOverview(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickGoToGenKey(ActionEvent event) {
     }
     
 }

@@ -11,27 +11,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.TeachersGenerateKeyWindowController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="topPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane layoutY="200.0" prefHeight="200.0" prefWidth="200.0" styleClass="root" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0" />
-      <AnchorPane prefHeight="52.0" prefWidth="106.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="70.0">
+      <AnchorPane prefHeight="52.0" prefWidth="106.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="70.0">
          <children>
-            <ImageView fitHeight="111.0" fitWidth="138.0" layoutX="151.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="154.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="4.0">
+            <ImageView fitHeight="111.0" fitWidth="138.0" layoutX="151.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="154.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="4.0">
                <image>
                   <Image url="@../pictures/generator%20key.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="lblTodaysDate" layoutX="173.0" layoutY="126.0" text="Todays Date" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" />
+            <Label fx:id="lblTodaysDate" layoutX="173.0" layoutY="126.0" text="Todays Date" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="170.0" />
             <JFXTextField fx:id="txtNewKey" layoutX="161.0" layoutY="152.0" prefHeight="26.0" prefWidth="102.0" promptText="Enter Todays Key" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="156.0" />
-            <JFXButton fx:id="btnSaveKey" layoutX="173.0" layoutY="198.0" onAction="#clickSaveNewKey" stylesheets="@../css/styleDmitri.css" text="Save" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="200.0">
+            <JFXButton fx:id="btnSaveKey" layoutX="173.0" layoutY="198.0" onAction="#clickSaveNewKey" stylesheets="@../css/styleDmitri.css" text="Save" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="200.0">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="btn2" />
                </styleClass>
             </JFXButton>
-            <JFXButton fx:id="btnBack" ellipsisString="" layoutX="14.0" layoutY="14.0" onAction="#clickBack" prefHeight="36.0" prefWidth="52.0" AnchorPane.rightAnchor="366.8">
+            <JFXButton fx:id="btnBack" ellipsisString="" layoutX="14.0" layoutY="14.0" onAction="#clickBack" prefHeight="36.0" prefWidth="52.0" AnchorPane.rightAnchor="346.8">
                <graphic>
                   <ImageView fitHeight="56.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
