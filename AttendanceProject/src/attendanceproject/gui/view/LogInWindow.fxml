@@ -49,12 +49,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close App" />
+              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close App" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text=" About App" />
+              <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text=" About App" />
             </items>
           </Menu>
         </menus>

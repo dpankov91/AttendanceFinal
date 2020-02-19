@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.StudentsKeyWindowController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="606.0" styleClass="topPane" stylesheets="@../css/styleDmitri.css" />
       <AnchorPane layoutY="193.0" prefHeight="212.0" prefWidth="606.0" styleClass="root" stylesheets="@../css/styleDmitri.css" />
       <AnchorPane prefHeight="251.0" prefWidth="456.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0">
          <children>
-            <Button layoutX="397.0" layoutY="161.0" mnemonicParsing="false" styleClass="btn" stylesheets="@../css/styleDmitri.css" text="Log Out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-            <Button layoutX="331.0" layoutY="161.0" mnemonicParsing="false" styleClass="btn" text="Back" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="85.0" />
-            <Button layoutX="188.0" layoutY="110.0" mnemonicParsing="false" styleClass="btn" text="Validate" />
-            <TextField layoutX="80.0" layoutY="69.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
+            <Button layoutX="397.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickLogOut" styleClass="btn" stylesheets="@../css/styleDmitri.css" text="Log Out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+            <Button layoutX="331.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickGoBack" styleClass="btn" text="Back" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="85.0" />
+            <Button layoutX="188.0" layoutY="110.0" mnemonicParsing="false" onAction="#clickEnterTodaysKey" styleClass="btn" text="Confirm" />
+            <TextField fx:id="txtTodaysKey" layoutX="80.0" layoutY="69.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -30,9 +30,9 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button layoutY="108.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" styleClass="cardPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+            <Button layoutY="108.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onAction="#clickGoToStudentsOverview" styleClass="btnOverviewPic" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
                <graphic>
-                  <ImageView fitHeight="83.0" fitWidth="82.0" styleClass="cardPane">
+                  <ImageView fitHeight="83.0" fitWidth="82.0">
                      <image>
                         <Image url="@../pictures/overviewButton.png" />
                      </image>
@@ -45,12 +45,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text="About" />
             </items>
           </Menu>
         </menus>

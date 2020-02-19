@@ -143,5 +143,13 @@ public class StudentsOverviewWindowController implements Initializable {
     @FXML
     private void clickBack(ActionEvent event) {
     }
+
+    @FXML
+    private void closeApp(ActionEvent event) {
+    }
+
+    @FXML
+    private void readAboutApp(ActionEvent event) {
+    }
     
 }

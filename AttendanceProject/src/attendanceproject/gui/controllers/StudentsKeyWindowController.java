@@ -5,7 +5,6 @@
  */
 package attendanceproject.gui.controllers;
 
-import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -22,14 +22,10 @@ import javafx.stage.Stage;
  *
  * @author dpank
  */
-public class TeachersChoiceWindowController implements Initializable {
+public class StudentsKeyWindowController implements Initializable {
 
     @FXML
-    private JFXButton btnLogOut;
-    @FXML
-    private JFXButton btnGoToOverview;
-    @FXML
-    private JFXButton btnGoToKey;
+    private TextField txtTodaysKey;
 
     /**
      * Initializes the controller class.
@@ -40,37 +36,34 @@ public class TeachersChoiceWindowController implements Initializable {
     }    
 
     @FXML
-    private void clickLogOut(ActionEvent event) {
-    }
-
-    @FXML
-    private void clickGoToOverview(ActionEvent event) throws IOException 
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersOverviewWindow.fxml"));
-        Parent z = loader.load();
-        Scene scene = new Scene(z);
-        Stage s = new Stage();
-        s.setScene(scene);
-        s.show();
-    }
-
-    @FXML
-    private void clickGoToGenKey(ActionEvent event) throws IOException 
-    {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersGenerateKeyWindow.fxml"));
-        Parent z = loader.load();
-        Scene scene = new Scene(z);
-        Stage s = new Stage();
-        s.setScene(scene);
-        s.show();
-    }
-
-    @FXML
     private void closeApp(ActionEvent event) {
     }
 
     @FXML
     private void readAboutApp(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickLogOut(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickGoBack(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickEnterTodaysKey(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickGoToStudentsOverview(ActionEvent event) throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsOverviewWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();
     }
     
 }

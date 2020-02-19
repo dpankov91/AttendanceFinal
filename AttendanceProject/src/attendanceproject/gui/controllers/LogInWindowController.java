@@ -10,8 +10,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -20,12 +18,6 @@ import javafx.scene.control.TextField;
  */
 public class LogInWindowController implements Initializable {
 
-    @FXML
-    private TextField txtUsername;
-    @FXML
-    private TextField txtPassword;
-    @FXML
-    private Button btnLogIn;
 
     /**
      * Initializes the controller class.
@@ -36,7 +28,11 @@ public class LogInWindowController implements Initializable {
     }    
 
     @FXML
-    private void clickLogIn(ActionEvent event) {
+    private void closeApp(ActionEvent event) {
+    }
+
+    @FXML
+    private void readAboutApp(ActionEvent event) {
     }
     
 }

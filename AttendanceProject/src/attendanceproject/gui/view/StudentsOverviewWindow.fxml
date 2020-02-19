@@ -23,7 +23,7 @@
          <children>
             <Button fx:id="btnBack" ellipsisString="" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#clickBack" stylesheets="@../css/styleDmitri.css">
                <graphic>
-                  <ImageView fitHeight="52.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../pictures/arrowBack.png" />
                      </image>
@@ -52,12 +52,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text="About" />
             </items>
           </Menu>
         </menus>

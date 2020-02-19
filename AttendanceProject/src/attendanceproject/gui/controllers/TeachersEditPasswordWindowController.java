@@ -45,5 +45,13 @@ public class TeachersEditPasswordWindowController implements Initializable {
     @FXML
     private void clickGoBack(ActionEvent event) {
     }
+
+    @FXML
+    private void closeApp(ActionEvent event) {
+    }
+
+    @FXML
+    private void readAboutApp(ActionEvent event) {
+    }
     
 }
