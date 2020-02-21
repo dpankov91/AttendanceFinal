@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,13 +28,15 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private TextField txtTodaysKey;
+    @FXML
+    private JFXButton btnConfirmStudents;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       btnConfirmStudents.setId("btnConfirmStudents");
     }    
 
     @FXML
@@ -57,7 +60,6 @@ public class StudentsKeyWindowController implements Initializable {
         s.show();      
     }
 
-    @FXML
     private void clickGoBack(ActionEvent event) 
     {
         ((Node) (event.getSource())).getScene().getWindow().hide();

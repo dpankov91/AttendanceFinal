@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -11,21 +13,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.StudentsKeyWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/styleDmitri.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.StudentsKeyWindowController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="606.0" styleClass="topPane" stylesheets="@../css/styleDmitri.css" />
-      <AnchorPane layoutY="193.0" prefHeight="212.0" prefWidth="606.0" styleClass="root" stylesheets="@../css/styleDmitri.css" />
-      <AnchorPane prefHeight="251.0" prefWidth="456.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane prefHeight="200.0" prefWidth="606.0" styleClass="topPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane prefHeight="212.0" prefWidth="606.0" styleClass="root" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" />
+      <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="251.0" prefWidth="456.0" styleClass="cardPane" stylesheets="@../css/styleDmitri.css" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0">
          <children>
-            <Button layoutX="397.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickLogOut" styleClass="btn" stylesheets="@../css/styleDmitri.css" text="Log Out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-            <Button layoutX="331.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickGoBack" styleClass="btn" text="Back" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="85.0" />
-            <Button layoutX="188.0" layoutY="110.0" mnemonicParsing="false" onAction="#clickEnterTodaysKey" styleClass="btn" text="Confirm" />
-            <TextField fx:id="txtTodaysKey" layoutX="80.0" layoutY="69.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
+            <TextField fx:id="txtTodaysKey" layoutX="80.0" layoutY="69.0" AnchorPane.bottomAnchor="152.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="68.0">
                <font>
                   <Font size="13.0" />
                </font>
             </TextField>
-            <Label layoutX="108.0" layoutY="33.0" prefHeight="29.0" prefWidth="235.0" styleClass="adjustableFont" stylesheets="@../css/styleDmitri.css" text="ENTER TODAY'S KEY" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="107.0">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="33.0" prefHeight="29.0" prefWidth="235.0" styleClass="adjustableFont" stylesheets="@../css/styleDmitri.css" text="ENTER TODAY'S KEY" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="107.0" AnchorPane.topAnchor="33.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -39,6 +38,18 @@
                   </ImageView>
                </graphic>
             </Button>
+            <JFXButton buttonType="RAISED" layoutX="309.0" layoutY="217.0" onAction="#clickLogOut" text="Log Out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn2" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton fx:id="btnConfirmStudents" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="186.0" layoutY="108.0" onAction="#clickEnterTodaysKey" prefHeight="36.0" prefWidth="81.0" text="Confirm" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="185.0">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn2" />
+               </styleClass>
+            </JFXButton>
          </children>
       </AnchorPane>
       <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
