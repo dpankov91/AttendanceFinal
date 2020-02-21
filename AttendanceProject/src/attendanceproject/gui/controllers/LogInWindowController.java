@@ -5,11 +5,19 @@
  */
 package attendanceproject.gui.controllers;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -17,6 +25,13 @@ import javafx.fxml.Initializable;
  * @author dpank
  */
 public class LogInWindowController implements Initializable {
+
+    @FXML
+    private JFXButton btnLogIn;
+    @FXML
+    private JFXTextField txtUsername;
+    @FXML
+    private JFXPasswordField txtPassword;
 
 
     /**
@@ -33,6 +48,38 @@ public class LogInWindowController implements Initializable {
 
     @FXML
     private void readAboutApp(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickLogIn(ActionEvent event) throws IOException 
+    {
+        checkWhatGroup(); 
+    }
+    
+    private void checkWhatGroup() throws IOException
+    {
+        if (txtUsername.getText().equals("Antonio") || txtUsername.getText().equals("Conor"))
+        {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsKeyWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();
+        }
+        else if(txtUsername.getText().equals("Vale") || txtUsername.getText().equals("Zlata"))
+        {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();  
+        }
+        else{
+            System.out.println("wrong cr....");
+        }
+
     }
     
 }

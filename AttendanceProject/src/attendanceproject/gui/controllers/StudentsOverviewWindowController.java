@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -141,11 +142,15 @@ public class StudentsOverviewWindowController implements Initializable {
             
 
     @FXML
-    private void clickBack(ActionEvent event) {
+    private void clickBack(ActionEvent event) 
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML
-    private void closeApp(ActionEvent event) {
+    private void closeApp(ActionEvent event) 
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML

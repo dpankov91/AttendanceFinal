@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -36,7 +37,9 @@ public class StudentsKeyWindowController implements Initializable {
     }    
 
     @FXML
-    private void closeApp(ActionEvent event) {
+    private void closeApp(ActionEvent event) 
+    {
+        
     }
 
     @FXML
@@ -44,11 +47,20 @@ public class StudentsKeyWindowController implements Initializable {
     }
 
     @FXML
-    private void clickLogOut(ActionEvent event) {
+    private void clickLogOut(ActionEvent event) throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/LogInWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();      
     }
 
     @FXML
-    private void clickGoBack(ActionEvent event) {
+    private void clickGoBack(ActionEvent event) 
+    {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML

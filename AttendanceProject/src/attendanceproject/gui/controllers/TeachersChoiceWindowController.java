@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -40,7 +41,15 @@ public class TeachersChoiceWindowController implements Initializable {
     }    
 
     @FXML
-    private void clickLogOut(ActionEvent event) {
+    private void clickLogOut(ActionEvent event) throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/LogInWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();  
+        
     }
 
     @FXML
@@ -66,7 +75,9 @@ public class TeachersChoiceWindowController implements Initializable {
     }
 
     @FXML
-    private void closeApp(ActionEvent event) {
+    private void closeApp(ActionEvent event) 
+    {
+     ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML

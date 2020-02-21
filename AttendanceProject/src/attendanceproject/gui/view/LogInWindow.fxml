@@ -25,9 +25,9 @@
             </ImageView>
             <AnchorPane layoutX="77.0" layoutY="146.0" prefHeight="123.0" prefWidth="318.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="130.0">
                <children>
-                  <JFXTextField layoutX="75.0" layoutY="14.0" prefHeight="30.0" prefWidth="183.0" promptText="Username" />
-                  <JFXPasswordField layoutX="75.0" layoutY="61.0" prefHeight="30.0" prefWidth="183.0" promptText="Password" />
-                  <JFXButton layoutX="126.0" layoutY="107.0" text="Log In">
+                  <JFXTextField fx:id="txtUsername" layoutX="75.0" layoutY="14.0" prefHeight="30.0" prefWidth="183.0" promptText="Username" />
+                  <JFXPasswordField fx:id="txtPassword" layoutX="75.0" layoutY="61.0" prefHeight="30.0" prefWidth="183.0" promptText="Password" />
+                  <JFXButton fx:id="btnLogIn" layoutX="126.0" layoutY="107.0" onAction="#clickLogIn" text="Log In">
                      <ripplerFill>
                         <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                            <stops>
