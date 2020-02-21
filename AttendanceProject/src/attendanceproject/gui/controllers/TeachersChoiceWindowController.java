@@ -77,7 +77,8 @@ public class TeachersChoiceWindowController implements Initializable {
     @FXML
     private void closeApp(ActionEvent event) 
     {
-     ((Node) (event.getSource())).getScene().getWindow().hide();
+        Stage stage = (Stage) btnLogOut.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

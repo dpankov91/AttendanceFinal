@@ -19,6 +19,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -144,13 +145,15 @@ public class StudentsOverviewWindowController implements Initializable {
     @FXML
     private void clickBack(ActionEvent event) 
     {
-        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     private void closeApp(ActionEvent event) 
     {
-        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

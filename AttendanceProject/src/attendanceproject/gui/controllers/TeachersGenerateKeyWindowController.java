@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -43,11 +44,17 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     }
 
     @FXML
-    private void clickBack(ActionEvent event) {
+    private void clickBack(ActionEvent event) 
+    {
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    private void closeApp(ActionEvent event) {
+    private void closeApp(ActionEvent event) 
+    {
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

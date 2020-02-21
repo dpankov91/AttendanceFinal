@@ -44,6 +44,7 @@ public class LogInWindowController implements Initializable {
 
     @FXML
     private void closeApp(ActionEvent event) {
+       
     }
 
     @FXML
@@ -76,9 +77,7 @@ public class LogInWindowController implements Initializable {
         s.setScene(scene);
         s.show();  
         }
-        else{
-            System.out.println("wrong cr....");
-        }
+        
 
     }
     
