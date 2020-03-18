@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.application.Platform;
 
 /**
  * FXML Controller class
@@ -44,7 +45,7 @@ public class LogInWindowController implements Initializable {
 
     @FXML
     private void closeApp(ActionEvent event) {
-       
+       Platform.exit();
     }
 
     @FXML
