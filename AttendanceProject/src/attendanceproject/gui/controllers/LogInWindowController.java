@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.application.Platform;
 
 /**
  * FXML Controller class
@@ -44,7 +45,7 @@ public class LogInWindowController implements Initializable {
 
     @FXML
     private void closeApp(ActionEvent event) {
-       
+       Platform.exit();
     }
 
     @FXML
@@ -59,7 +60,7 @@ public class LogInWindowController implements Initializable {
     
     private void checkWhatGroup() throws IOException
     {
-        if (txtUsername.getText().equals("Antonio") || txtUsername.getText().equals("Conor"))
+        if (txtUsername.getText().equals("Antonio")&& txtPassword.getText().equals("security") || txtUsername.getText().equals("Conor")&& txtPassword.getText().equals("safety"))
         {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsKeyWindow.fxml"));
         Parent z = loader.load();

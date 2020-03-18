@@ -55,7 +55,7 @@ public class TeachersChoiceWindowController implements Initializable {
     @FXML
     private void clickGoToOverview(ActionEvent event) throws IOException 
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersOverviewWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsOverviewWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
         Stage s = new Stage();
