@@ -39,7 +39,7 @@ public class TeachersGenerateKeyWindowController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        showDate();
     }    
     
     @FXML
@@ -66,8 +66,10 @@ public class TeachersGenerateKeyWindowController implements Initializable {
 
     public void showDate() {
         Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat ("dd-mm-yyyy");
+        DateFormat dateFormat = new SimpleDateFormat ("dd/MM/yyyy");
         lblTodaysDate.setText(dateFormat.format(date));
+        
     }
+    
     
 }
