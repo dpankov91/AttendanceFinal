@@ -67,6 +67,7 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) {
+        
     }
 
     @FXML

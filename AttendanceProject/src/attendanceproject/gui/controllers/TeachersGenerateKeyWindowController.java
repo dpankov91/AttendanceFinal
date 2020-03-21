@@ -8,6 +8,9 @@ package attendanceproject.gui.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,9 +39,9 @@ public class TeachersGenerateKeyWindowController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
-
+    
     @FXML
     private void clickSaveNewKey(ActionEvent event) {
     }
@@ -59,6 +62,12 @@ public class TeachersGenerateKeyWindowController implements Initializable {
 
     @FXML
     private void readAboutApp(ActionEvent event) {
+    }
+
+    public void showDate() {
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat ("dd-mm-yyyy");
+        lblTodaysDate.setText(dateFormat.format(date));
     }
     
 }
