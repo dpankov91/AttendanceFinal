@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
@@ -55,7 +56,28 @@ public class LogInWindowController implements Initializable {
     @FXML
     private void clickLogIn(ActionEvent event) throws IOException 
     {
+        checkIfFieldsAreEmpty();
         //checkWhatGroup(); 
+    }
+    
+        private void checkIfFieldsAreEmpty()
+    {
+        if(txtUsername.getText() == null || txtUsername.getText().isEmpty() )
+        {
+            setUpAlert("No Username Error" , "Please insert Username.");
+        }
+        else if(txtPassword.getText() == null || txtPassword.getText().isEmpty() )
+        {
+            setUpAlert("No Password Error" , "Please insert Password.");    
+        }
+    }
+        
+    private void setUpAlert(String title, String message){
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
     
     
@@ -82,6 +104,6 @@ public class LogInWindowController implements Initializable {
         }*/
         
 
-    }
-    
+   
+
 }
