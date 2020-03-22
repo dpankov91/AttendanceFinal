@@ -5,10 +5,7 @@
  */
 package attendanceproject.be;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 /**
  *
@@ -20,7 +17,8 @@ public class User {
     private final StringProperty lName = new SimpleStringProperty();
     private final IntegerProperty id = new SimpleIntegerProperty();
     private final IntegerProperty groupId = new SimpleIntegerProperty();
-
+    
+    
     public User(Integer id, String firstName, String secondName, int groupId) 
     {
         this.id.setValue(id);
@@ -29,8 +27,13 @@ public class User {
         this.groupId.setValue(groupId);
         
     }
+
+    public User(int i, String name, Role role) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-    
+
+        
     
 
     public int getGroupId() 
@@ -83,7 +86,9 @@ public class User {
     public IntegerProperty idProperty() {
         return id;
     }
-
+    public enum Role {
+        Student, Teacher
+    }
 
     @Override
     public String toString() {
