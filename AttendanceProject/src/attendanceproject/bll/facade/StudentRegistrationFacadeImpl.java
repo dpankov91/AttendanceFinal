@@ -16,24 +16,11 @@ public class StudentRegistrationFacadeImpl implements IStudentRegistrationFacade
      private IUserFacade userSystem;
      private ISecurityManager securitySystem;
     
-    @Override
-    public User createUser(String name, String email, String password, User.Role role) {
-        return userSystem.createUser(name, email, password, role);
-    }
-
-    @Override
-    public void removeUser(User user) {
-        userSystem.removeUser(user);
-    }
+    
 
     @Override
     public User[] getAllUsers() {
        return userSystem.getAllUsers();
-    }
-
-    @Override
-    public User[] getAllUsers(User.Role role) {
-        return userSystem.getAllUsers(role);
     }
 
     @Override

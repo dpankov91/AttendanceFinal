@@ -5,7 +5,6 @@
  */
 package attendanceproject.be;
 
-import javafx.beans.property.*;
 
 /**
  *
@@ -13,86 +12,34 @@ import javafx.beans.property.*;
  */
 public class User {
     
-    private final StringProperty fName = new SimpleStringProperty();
-    private final StringProperty lName = new SimpleStringProperty();
-    private final IntegerProperty id = new SimpleIntegerProperty();
-    private final IntegerProperty groupId = new SimpleIntegerProperty();
-    
-    
-    public User(Integer id, String firstName, String secondName, int groupId) 
-    {
-        this.id.setValue(id);
-        this.fName.setValue(firstName);
-        this.lName.setValue(secondName);
-        this.groupId.setValue(groupId);
-        
-    }
-
-    public User(int i, String name, Role role) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public enum UserType {
+        STUDENT, TEACHER
     }
     
-
-        
+    private int id;
+    private String name;
+    private UserType type;
     
-
-    public int getGroupId() 
+    public User(int id, String name, UserType type)
     {
-        return groupId.get();
+        this.id = id;
+        this.name = name;
+        this.type = type;
     }
 
-    public void setGroupId(int value) 
+    public int getId()
     {
-        groupId.set(value);
-    }
-
-    public IntegerProperty groupIdProperty() 
-    {
-        return groupId;
-    }
-
-    public String getlName() {
-        return lName.get();
-    }
-
-    public void setlName(String value) {
-        lName.set(value);
-    }
-
-    public StringProperty lNameProperty() {
-        return lName;
-    }
-
-    public String getfName() {
-        return fName.get();
-    }
-
-    public void setfName(String value) {
-        fName.set(value);
-    }
-
-    public StringProperty fNameProperty() {
-        return fName;
-    }
-
-    public int getId() {
-        return id.get();
-    }
-
-    public void setId(int value) {
-        id.set(value);
-    }
-
-    public IntegerProperty idProperty() {
         return id;
     }
-    public enum Role {
-        Student, Teacher
+    
+    public String getName() 
+    {
+        return name;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", permissionGroup=" + groupId + '}';
+    public UserType getType() 
+    {
+        return type;
     }
 }
 

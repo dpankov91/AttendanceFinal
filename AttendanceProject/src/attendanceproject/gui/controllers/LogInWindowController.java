@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.gui.model.MainModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -34,15 +35,23 @@ public class LogInWindowController implements Initializable {
     private JFXTextField txtUsername;
     @FXML
     private JFXPasswordField txtPassword;
+    private MainModel model;
 
-
+   
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+       
+        
     }    
+    
+    public void injectModel(MainModel model)
+    {
+        this.model = model;
+    }
 
     @FXML
     private void closeApp(ActionEvent event) {
@@ -57,9 +66,9 @@ public class LogInWindowController implements Initializable {
     private void clickLogIn(ActionEvent event) throws IOException 
     {
         checkIfFieldsAreEmpty();
-        //checkWhatGroup(); 
     }
     
+        
         private void checkIfFieldsAreEmpty()
     {
         if(txtUsername.getText() == null || txtUsername.getText().isEmpty() )
@@ -80,29 +89,10 @@ public class LogInWindowController implements Initializable {
         alert.showAndWait();
     }
     
-    
-    
-    /*private void checkWhatGroup() throws IOException
+    private void login()
     {
-        if (txtUsername.getText().equals("Antonio")&& txtPassword.getText().equals("security") || txtUsername.getText().equals("Conor")&& txtPassword.getText().equals("safety"))
-        {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsKeyWindow.fxml"));
-        Parent z = loader.load();
-        Scene scene = new Scene(z);
-        Stage s = new Stage();
-        s.setScene(scene);
-        s.show();
-        }
-        else if(txtUsername.getText().equals("Vale") || txtUsername.getText().equals("Zlata"))
-        {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
-        Parent z = loader.load();
-        Scene scene = new Scene(z);
-        Stage s = new Stage();
-        s.setScene(scene);
-        s.show();  
-        }*/
-        
+        model.loginUser(txtUsername.getText(), txtPassword.getText());
+    }
 
    
 
