@@ -55,10 +55,12 @@ public class LogInWindowController implements Initializable {
     @FXML
     private void clickLogIn(ActionEvent event) throws IOException 
     {
-        checkWhatGroup(); 
+        //checkWhatGroup(); 
     }
     
-    private void checkWhatGroup() throws IOException
+    
+    
+    /*private void checkWhatGroup() throws IOException
     {
         if (txtUsername.getText().equals("Antonio")&& txtPassword.getText().equals("security") || txtUsername.getText().equals("Conor")&& txtPassword.getText().equals("safety"))
         {
@@ -77,7 +79,7 @@ public class LogInWindowController implements Initializable {
         Stage s = new Stage();
         s.setScene(scene);
         s.show();  
-        }
+        }*/
         
 
     }
