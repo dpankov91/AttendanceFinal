@@ -6,9 +6,13 @@
 package attendanceproject.dal.dao;
 
 import attendanceproject.be.User;
-import attendanceproject.dal.DbConnectionProvider;
+import attendanceproject.util.exception.Exceptions;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -18,13 +22,21 @@ public class UserDAO {
     
     private final DbConnectionProvider connector;
 
-    public UserDAO() throws Exceptions
+    public UserDAO()    
     {
         connector = new DbConnectionProvider();
     }
 
-    public User getUser(String username, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public User getUser(String username, String password) throws SQLServerException, SQLException
+    {
+        String sql = "SELECT * FROM User WHERE username=? AND password=?";
+        
+        Connection con = connector.getConnection();
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, username);
+        pstmt.setString(2, password);
+        ResultSet rs = pstmt.executeQuery();
+        return null;
     }
     
 }

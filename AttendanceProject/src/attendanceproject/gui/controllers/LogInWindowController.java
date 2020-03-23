@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.be.User;
 import attendanceproject.gui.model.MainModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -92,8 +93,8 @@ public class LogInWindowController implements Initializable {
     private void login()
     {
         model.loginUser(txtUsername.getText(), txtPassword.getText());
+        
+        
+        
     }
-
-   
-
 }

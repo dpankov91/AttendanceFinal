@@ -34,9 +34,4 @@ public class MainModel
         loggedInUser = null;
     }
     
-    public String getUserName()
-    {
-        return loggedInUser.getName();
-    }
-    
 }

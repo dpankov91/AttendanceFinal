@@ -12,34 +12,42 @@ package attendanceproject.be;
  */
 public class User {
     
-    public enum UserType {
-        STUDENT, TEACHER
-    }
-    
     private int id;
-    private String name;
-    private UserType type;
+    private String Fname;
+    private String Lname;
+    private boolean isTeacher;
     
-    public User(int id, String name, UserType type)
+    public User(int id, String Fname, String Lname)
     {
         this.id = id;
-        this.name = name;
-        this.type = type;
+        this.Fname = Fname;
+        this.Lname = Lname;
     }
 
-    public int getId()
+    public User(int id, boolean isTeacher) 
     {
-        return id;
+        this.id = id;
+        this.isTeacher = isTeacher;
     }
     
-    public String getName() 
-    {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public UserType getType() 
-    {
-        return type;
+    public String getFname() {
+        return Fname;
     }
+
+    public String getLname() {
+        return Lname;
+    }
+
+    public boolean isIsTeacher() {
+        return isTeacher;
+    }
+    
+    
+
+    
 }
 
