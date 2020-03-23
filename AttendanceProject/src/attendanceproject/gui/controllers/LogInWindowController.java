@@ -37,7 +37,6 @@ public class LogInWindowController implements Initializable {
     @FXML
     private JFXPasswordField txtPassword;
     private MainModel model;
-
    
     /**
      * Initializes the controller class.
@@ -45,7 +44,7 @@ public class LogInWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-       
+  
         
     }    
     
@@ -67,6 +66,8 @@ public class LogInWindowController implements Initializable {
     private void clickLogIn(ActionEvent event) throws IOException 
     {
         checkIfFieldsAreEmpty();
+        model.loginUser(txtUsername.getText(), txtPassword.getText());
+        
     }
     
         
@@ -90,11 +91,8 @@ public class LogInWindowController implements Initializable {
         alert.showAndWait();
     }
     
-    private void login()
+    private void checkTeacherOrStudent()
     {
-        model.loginUser(txtUsername.getText(), txtPassword.getText());
-        
-        
         
     }
 }

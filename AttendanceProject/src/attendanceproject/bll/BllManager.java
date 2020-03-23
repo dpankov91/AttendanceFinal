@@ -7,6 +7,9 @@ package attendanceproject.bll;
 
 import attendanceproject.be.User;
 import attendanceproject.dal.DalFacade;
+import attendanceproject.util.exception.Exceptions;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,7 +27,12 @@ public class BllManager implements BllFacade{
     @Override
     public User getUser(String username, String password) 
     {
-        return dalfacade.getUser(username, password);    
+        try {    
+            return dalfacade.getUser(username, password);
+        } catch (Exceptions ex) {
+            Logger.getLogger(BllManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 }

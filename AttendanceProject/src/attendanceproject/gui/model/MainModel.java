@@ -16,8 +16,6 @@ public class MainModel
 {
     private BllFacade facade;
     private User loggedInUser;
-    
-   
 
     public MainModel(BllFacade facade) 
     {
@@ -27,11 +25,5 @@ public class MainModel
     public void loginUser(String username, String password)
     {
         loggedInUser =  facade.getUser(username, password);
-    }
-    
-    public void logoutUser()
-    {
-        loggedInUser = null;
-    }
-    
+    } 
 }
