@@ -6,6 +6,7 @@
 package attendanceproject.dal;
 
 import attendanceproject.be.User;
+import attendanceproject.util.exception.Exceptions;
 
 /**
  *
@@ -13,6 +14,6 @@ import attendanceproject.be.User;
  */
 public interface DalFacade {
 
-    public User getUser(String username, String hashedPassword);
+    public User getUser(String username, String password) throws Exceptions;
     
 }
