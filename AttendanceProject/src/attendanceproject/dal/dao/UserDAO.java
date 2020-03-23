@@ -6,6 +6,7 @@
 package attendanceproject.dal.dao;
 
 import attendanceproject.be.User;
+import attendanceproject.dal.DbConnectionProvider;
 import java.io.IOException;
 import java.sql.Connection;
 
@@ -17,9 +18,9 @@ public class UserDAO {
     
     private final DbConnectionProvider connector;
 
-    public CatMovDAO() throws IOException
+    public UserDAO() throws Exceptions
     {
-        connector = new dbConnectionProvider();
+        connector = new DbConnectionProvider();
     }
 
     public User getUser(String username, String password) {
