@@ -5,15 +5,10 @@
  */
 package attendanceproject.dal;
 
-import attendanceproject.be.User;
-import attendanceproject.util.exception.Exceptions;
-
 /**
  *
  * @author dpank
  */
-public interface DalFacade {
-
-    public User getUser(String username, String password) throws Exceptions;
+public class DbConnectionProvider {
     
 }
