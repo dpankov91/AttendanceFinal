@@ -8,7 +8,12 @@ package attendanceproject.gui.controllers;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -67,8 +72,16 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) {
-     String sql = "Insert into";
-            
+       try{
+           Connection con = DatabaseName.getConnection(url);
+           String query = "INSERT into"; //needs name of database here on both lines
+           PreparedStatement pst = con.prepareStatement(query);
+           pst.setString(1, clickEnterTodaysKey.getText());
+           
+       } 
+       catch (SQLException ex) {          
+            Logger.getLogger(StudentsKeyWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }          
      
     }
 
