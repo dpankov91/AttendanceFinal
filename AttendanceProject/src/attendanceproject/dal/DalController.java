@@ -43,8 +43,9 @@ public class DalController implements DalFacade {
             return user;
         } catch (SQLException ex) {
             Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            
         return null;
+        }
     }
 
 }
