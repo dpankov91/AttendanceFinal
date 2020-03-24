@@ -72,7 +72,7 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) {
-       try{
+      /* try{
            Connection con = DatabaseName.getConnection(url);
            String query = "INSERT into"; //needs name of database here on both lines
            PreparedStatement pst = con.prepareStatement(query);
@@ -82,7 +82,7 @@ public class StudentsKeyWindowController implements Initializable {
        catch (SQLException ex) {          
             Logger.getLogger(StudentsKeyWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }          
-     
+     */
     }
 
     @FXML

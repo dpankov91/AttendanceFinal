@@ -17,16 +17,12 @@ public class User {
     private String Lname;
     private boolean isTeacher;
     
-    public User(int id, String Fname, String Lname)
+    
+    public User(int id, String Fname, String Lname, boolean isTeacher)
     {
         this.id = id;
         this.Fname = Fname;
         this.Lname = Lname;
-    }
-
-    public User(int id, boolean isTeacher) 
-    {
-        this.id = id;
         this.isTeacher = isTeacher;
     }
     
@@ -42,7 +38,7 @@ public class User {
         return Lname;
     }
 
-    public boolean isIsTeacher() {
+    public boolean getIsTeacher() {
         return isTeacher;
     }
     

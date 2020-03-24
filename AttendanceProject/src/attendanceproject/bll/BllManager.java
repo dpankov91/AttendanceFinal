@@ -6,6 +6,7 @@
 package attendanceproject.bll;
 
 import attendanceproject.be.User;
+import attendanceproject.dal.DalController;
 import attendanceproject.dal.DalFacade;
 import attendanceproject.util.exception.Exceptions;
 import java.util.logging.Level;
@@ -19,9 +20,9 @@ public class BllManager implements BllFacade{
     
     private DalFacade dalfacade;
 
-    public BllManager(DalFacade facade)
+    public BllManager()
     {
-        this.dalfacade = dalfacade;
+        this.dalfacade = new DalController();
     }
 
     @Override

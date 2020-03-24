@@ -7,6 +7,7 @@ package attendanceproject.gui.model;
 
 import attendanceproject.be.User;
 import attendanceproject.bll.BllFacade;
+import attendanceproject.bll.BllManager;
 
 /**
  *
@@ -17,13 +18,13 @@ public class MainModel
     private BllFacade facade;
     private User loggedInUser;
 
-    public MainModel(BllFacade facade) 
+    public MainModel() 
     {
-    this.facade = facade;    
+    this.facade = new BllManager();    
     }
     
-    public void loginUser(String username, String password)
+    public User loginUser(String username, String password)
     {
-        loggedInUser =  facade.getUser(username, password);
+       return loggedInUser =  facade.getUser(username, password);
     } 
 }

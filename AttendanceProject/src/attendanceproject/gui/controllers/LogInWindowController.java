@@ -21,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.application.Platform;
+import static javafx.application.Platform.exit;
 import javafx.scene.control.Alert;
 
 /**
@@ -45,13 +46,8 @@ public class LogInWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) 
     {
   
-        
+        this.model = new MainModel();
     }    
-    
-    public void injectModel(MainModel model)
-    {
-        this.model = model;
-    }
 
     @FXML
     private void closeApp(ActionEvent event) {
@@ -66,7 +62,9 @@ public class LogInWindowController implements Initializable {
     private void clickLogIn(ActionEvent event) throws IOException 
     {
         checkIfFieldsAreEmpty();
-        model.loginUser(txtUsername.getText(), txtPassword.getText());
+        login();
+   
+        
         
     }
     
@@ -91,8 +89,25 @@ public class LogInWindowController implements Initializable {
         alert.showAndWait();
     }
     
-    private void checkTeacherOrStudent()
+    private void login() throws IOException
     {
-        
+        User us = model.loginUser(txtUsername.getText(), txtPassword.getText());
+        if(us.getIsTeacher())
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
+            Parent z = loader.load();
+            Scene scene = new Scene(z);
+            Stage s = new Stage();
+            s.setScene(scene);
+            s.show();
+        }else
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsKeyWindow.fxml"));
+            Parent z = loader.load();
+            Scene scene = new Scene(z);
+            Stage s = new Stage();
+            s.setScene(scene);
+            s.show();
+        }
     }
 }
