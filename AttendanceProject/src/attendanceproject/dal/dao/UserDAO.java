@@ -29,26 +29,26 @@ public class UserDAO {
 
     public User getUser(String username, String password) throws SQLServerException, SQLException
     {
-        String sql = "SELECT * FROM User WHERE username=? AND password=?";
-
+        String sql = "SELECT * FROM [dbo].[User] WHERE username = ? AND password = ? ";
+       
         Connection con = connector.getConnection();
         PreparedStatement pstmt = con.prepareStatement(sql);
         pstmt.setString(1, username);
         pstmt.setString(2, password);
         ResultSet rs = pstmt.executeQuery();
-        if(rs != null)
-        {
+        
+        if(!rs.next()){
+            return null;
+        }else{
         int id = rs.getInt("id");
-        String firstname = rs.getString("fname");
-        String lastName = rs.getString("lname");
+        String firstName = rs.getString("Fname");
+        String lastName = rs.getString("Lname");
         boolean isTeacher = rs.getBoolean("teacher");
-            System.out.println("DAO");
-        User us = new User(id, firstname, lastName, isTeacher);
+        
+        User us = new User(id, firstName, lastName, isTeacher);
         
         return us;
-        }else{
-            return null;
-        }
+}
     }
     
 }

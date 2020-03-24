@@ -31,9 +31,11 @@ public class BllManager implements BllFacade{
         try {    
             return dalfacade.getUser(username, password);
         } catch (Exceptions ex) {
+            
+
             Logger.getLogger(BllManager.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
-        return null;
     }
     
 }
