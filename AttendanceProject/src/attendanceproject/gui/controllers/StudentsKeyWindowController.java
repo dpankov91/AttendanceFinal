@@ -72,17 +72,17 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) {
-      /* try{
-           Connection con = Database.getConnection(url);
-           String query = "INSERT txtTodaysKey.getText INTO"; //needs name of database here on both lines
+      try(Connection con = AttendanceApp.getConnection()){
+           String todaysKey = txtTodaysKey.getText();
+           String query = "INSERT INTO tablename values '\" + name + \"'; "; //needs name of database here on both lines
            PreparedStatement pst = con.prepareStatement(query);
-           pst.setString(1, txtTodaysKey.getText());
+           
            
        } 
        catch (SQLException ex) {          
             Logger.getLogger(StudentsKeyWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }          
-     */
+     
     }
 
     @FXML
