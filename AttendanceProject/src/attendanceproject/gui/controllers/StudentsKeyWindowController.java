@@ -74,7 +74,7 @@ public class StudentsKeyWindowController implements Initializable {
     private void clickEnterTodaysKey(ActionEvent event) {
       /* try{
            Connection con = Database.getConnection(url);
-           String query = "INSERT INTO"; //needs name of database here on both lines
+           String query = "INSERT txtTodaysKey.getText INTO"; //needs name of database here on both lines
            PreparedStatement pst = con.prepareStatement(query);
            pst.setString(1, txtTodaysKey.getText());
            
