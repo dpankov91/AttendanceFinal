@@ -36,7 +36,7 @@ public class UserDAO {
         pstmt.setString(1, username);
         pstmt.setString(2, password);
         ResultSet rs = pstmt.executeQuery();
-        System.out.println("DAO2");
+        
         if(!rs.next()){
             return null;
         }else{
