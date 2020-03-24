@@ -30,20 +30,27 @@ public class UserDAO {
     public User getUser(String username, String password) throws SQLServerException, SQLException
     {
         String sql = "SELECT * FROM User WHERE username=? AND password=?";
-
+        System.out.println("DAO");
         Connection con = connector.getConnection();
+                System.out.println("DAO2");
+
         PreparedStatement pstmt = con.prepareStatement(sql);
+                System.out.println("DAO2");
+
         pstmt.setString(1, username);
         pstmt.setString(2, password);
+                System.out.println("DAO2");
+
         ResultSet rs = pstmt.executeQuery();
+        System.out.println("DAO2");
         if(rs != null)
         {
         int id = rs.getInt("id");
-        String firstname = rs.getString("fname");
-        String lastName = rs.getString("lname");
+        String firstName = rs.getString("Fname");
+        String lastName = rs.getString("Lname");
         boolean isTeacher = rs.getBoolean("teacher");
-            System.out.println("DAO");
-        User us = new User(id, firstname, lastName, isTeacher);
+        
+        User us = new User(id, firstName, lastName, isTeacher);
         
         return us;
         }else{
