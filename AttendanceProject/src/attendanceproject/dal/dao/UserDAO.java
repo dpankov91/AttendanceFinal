@@ -30,7 +30,7 @@ public class UserDAO {
     public User getUser(String username, String password) throws SQLServerException, SQLException
     {
         String sql = "SELECT * FROM [dbo].[User] WHERE username = ? AND password = ? ";
-        System.out.println("DAO");
+       
         Connection con = connector.getConnection();
         PreparedStatement pstmt = con.prepareStatement(sql);
         pstmt.setString(1, username);
