@@ -54,7 +54,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text=" About App" />
+              <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text=" About" />
                   <MenuItem mnemonicParsing="false" onAction="#forgotYourPassword" text="Forgot your password?" />
             </items>
           </Menu>

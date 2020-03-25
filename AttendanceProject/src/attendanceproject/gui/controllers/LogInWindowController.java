@@ -122,6 +122,6 @@ public class LogInWindowController implements Initializable {
     }
     @FXML
     private void readAboutApp(ActionEvent event) throws IOException{
-        setUpAlert("About app" , "On this window, you need to log in using your individual username and password.");
+        setUpAlert("About" , "On this window, you need to log in using your individual username and password.");
     }
 }
