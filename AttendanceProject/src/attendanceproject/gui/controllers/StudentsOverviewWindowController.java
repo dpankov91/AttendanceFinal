@@ -7,6 +7,7 @@ package attendanceproject.gui.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -152,8 +153,7 @@ public class StudentsOverviewWindowController implements Initializable {
     @FXML
     private void closeApp(ActionEvent event) 
     {
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        stage.close();
+        Platform.exit();
     }
 
     @FXML

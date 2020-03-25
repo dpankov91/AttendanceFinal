@@ -50,8 +50,9 @@ public class LogInWindowController implements Initializable {
     }    
 
     @FXML
-    private void closeApp(ActionEvent event) {
-       Platform.exit();
+    private void closeApp(ActionEvent event) 
+    {
+        Platform.exit();
     }
 
     @FXML
@@ -100,6 +101,7 @@ public class LogInWindowController implements Initializable {
             Stage s = new Stage();
             s.setScene(scene);
             s.show();
+            closeWindow();
         }else
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsKeyWindow.fxml"));
@@ -108,6 +110,13 @@ public class LogInWindowController implements Initializable {
             Stage s = new Stage();
             s.setScene(scene);
             s.show();
+            closeWindow();
         }
+    }
+    
+    private void closeWindow()
+    {
+        Stage stage = (Stage) btnLogIn.getScene().getWindow();
+        stage.close();
     }
 }

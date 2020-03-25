@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,12 +57,16 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     
     private void insertTodaysKey()
     {
+        if(txtNewKey.getText().trim().length() > 3)
+        {
         String todaysKey = txtNewKey.getText().trim();
         model.insertKey(todaysKey);
         txtNewKey.clear();
         setUpAlert("Success", "Todays Key is generated");
         closeWindow();
-        
+        } else{
+            setUpAlert("Too short key", "Key must be at least 3 letters.");
+        }
     }
 
     @FXML
@@ -80,8 +85,7 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     @FXML
     private void closeApp(ActionEvent event) 
     {
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        stage.close();
+        Platform.exit();
     }
 
     @FXML
