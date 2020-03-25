@@ -8,6 +8,7 @@ package attendanceproject.gui.controllers;
 import attendanceproject.gui.model.MainModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -16,7 +17,10 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -70,10 +74,15 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     }
 
     @FXML
-    private void clickBack(ActionEvent event) 
+    private void clickBack(ActionEvent event) throws IOException 
     {
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();
+        closeWindow();
     }
     
     private void closeWindow() 

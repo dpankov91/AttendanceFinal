@@ -68,12 +68,9 @@ public class StudentsKeyWindowController implements Initializable {
         Scene scene = new Scene(z);
         Stage s = new Stage();
         s.setScene(scene);
-        s.show();      
-    }
-
-    private void clickGoBack(ActionEvent event) 
-    {
-        ((Node) (event.getSource())).getScene().getWindow().hide();
+        s.show();
+        Stage stage = (Stage) btnConfirmStudents.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

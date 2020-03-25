@@ -49,19 +49,20 @@ public class TeachersChoiceWindowController implements Initializable {
         Scene scene = new Scene(z);
         Stage s = new Stage();
         s.setScene(scene);
-        s.show();  
-        
+        s.show(); 
+        closeWindow();
     }
 
     @FXML
     private void clickGoToOverview(ActionEvent event) throws IOException 
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsOverviewWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersOverviewWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
         Stage s = new Stage();
         s.setScene(scene);
         s.show();
+        closeWindow();
     }
 
     @FXML
@@ -73,6 +74,13 @@ public class TeachersChoiceWindowController implements Initializable {
         Stage s = new Stage();
         s.setScene(scene);
         s.show();
+        closeWindow();
+    }
+    
+    private void closeWindow()
+    {
+        Stage stage = (Stage) btnLogOut.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

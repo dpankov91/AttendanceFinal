@@ -146,6 +146,7 @@ public class StudentsOverviewWindowController implements Initializable {
     @FXML
     private void clickBack(ActionEvent event) 
     {
+        
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
     }

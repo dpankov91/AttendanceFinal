@@ -5,8 +5,6 @@
  */
 package attendanceproject.gui.controllers;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,10 +13,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -26,14 +25,16 @@ import javafx.stage.Stage;
  *
  * @author dpank
  */
-public class TeachersEditPasswordWindowController implements Initializable {
+public class TeachersOverviewWindowController implements Initializable {
 
     @FXML
-    private JFXTextField txtNewPassword;
+    private TableView<?> studentsTable;
     @FXML
-    private JFXTextField txtConfirmNewPassword;
+    private TableColumn<?, ?> firstNameCol;
     @FXML
-    private JFXButton btnSave;
+    private TableColumn<?, ?> secondNameCol;
+    @FXML
+    private TableColumn<?, ?> attendanceCol;
     @FXML
     private Button btnBack;
 
@@ -46,18 +47,14 @@ public class TeachersEditPasswordWindowController implements Initializable {
     }    
 
     @FXML
-    private void saveNewPassword(ActionEvent event) {
-    }
-
-    @FXML
     private void clickGoBack(ActionEvent event) throws IOException 
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/LogInWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
         Stage s = new Stage();
         s.setScene(scene);
-        s.show(); 
+        s.show();
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
     }
@@ -65,12 +62,12 @@ public class TeachersEditPasswordWindowController implements Initializable {
     @FXML
     private void closeApp(ActionEvent event) 
     {
-       Platform.exit();
-
+        Platform.exit();
     }
 
     @FXML
-    private void readAboutApp(ActionEvent event) {
+    private void openAboutTeachOverview(ActionEvent event) 
+    {
     }
     
 }
