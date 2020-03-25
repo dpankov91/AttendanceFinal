@@ -15,5 +15,7 @@ import attendanceproject.util.exception.Exceptions;
 public interface DalFacade {
 
     public User getUser(String username, String password) throws Exceptions;
+
+    public void addKey(String todaysKey);
     
 }

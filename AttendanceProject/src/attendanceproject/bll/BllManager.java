@@ -37,5 +37,11 @@ public class BllManager implements BllFacade{
             return null;
         }
     }
+
+    @Override
+    public void addKey(String todaysKey) 
+    {
+        dalfacade.addKey(todaysKey);
+    }
     
 }

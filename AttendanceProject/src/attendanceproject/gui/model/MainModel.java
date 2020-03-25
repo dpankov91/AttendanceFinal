@@ -27,4 +27,9 @@ public class MainModel
     {
        return loggedInUser =  facade.getUser(username, password);
     } 
+
+    public void insertKey(String todaysKey) 
+    {
+        facade.addKey(todaysKey);
+    }
 }

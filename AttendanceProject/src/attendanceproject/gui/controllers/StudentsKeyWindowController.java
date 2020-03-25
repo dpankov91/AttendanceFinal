@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.gui.model.MainModel;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -35,12 +36,16 @@ public class StudentsKeyWindowController implements Initializable {
     private TextField txtTodaysKey;
     @FXML
     private JFXButton btnConfirmStudents;
+    
+    MainModel model;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+       model = new MainModel();
        btnConfirmStudents.setId("btnConfirmStudents");
     }    
 
@@ -71,18 +76,9 @@ public class StudentsKeyWindowController implements Initializable {
     }
 
     @FXML
-    private void clickEnterTodaysKey(ActionEvent event) {
-      try(Connection con = AttendanceApp.getConnection()){
-           String todaysKey = txtTodaysKey.getText();
-           String query = "INSERT INTO tablename values '\" + name + \"'; "; //needs name of database here on both lines
-           PreparedStatement pst = con.prepareStatement(query);
-           
-           
-       } 
-       catch (SQLException ex) {          
-            Logger.getLogger(StudentsKeyWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }          
-     
+    private void clickEnterTodaysKey(ActionEvent event) 
+    {
+      
     }
 
     @FXML

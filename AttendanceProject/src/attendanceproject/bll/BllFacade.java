@@ -14,5 +14,7 @@ import attendanceproject.be.User;
 public interface BllFacade {
 
     public User getUser(String username, String password);
+
+    public void addKey(String todaysKey);
     
 }

@@ -1,10 +1,11 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.gui.model.MainModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -37,13 +38,25 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    MainModel model;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showDate();
+        model = new MainModel();
     }    
     
     @FXML
-    private void clickSaveNewKey(ActionEvent event) {
+    private void clickSaveNewKey(ActionEvent event) 
+    {
+        insertTodaysKey();
+    }
+    
+    private void insertTodaysKey()
+    {
+        String todaysKey = txtNewKey.getText();
+        model.insertKey(todaysKey);
     }
 
     @FXML

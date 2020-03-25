@@ -50,5 +50,15 @@ public class UserDAO {
         return us;
 }
     }
-    
+
+    public void addKey(String todaysKey) throws SQLServerException, SQLException
+    {
+        String sql = "INSERT INTO [dbo].[KeyHolder]([Key]) VALUES (?)";
+       
+        Connection con = connector.getConnection();
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        //pstmt.setString(1, todaysKey);
+        //ResultSet rs = pstmt.executeQuery();        
+    }
+
 }

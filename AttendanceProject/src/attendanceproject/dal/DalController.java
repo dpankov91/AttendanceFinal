@@ -48,4 +48,14 @@ public class DalController implements DalFacade {
         }
     }
 
+    @Override
+    public void addKey(String todaysKey) 
+    {
+        try {
+            userDao.addKey(todaysKey);
+        } catch (SQLException ex) {
+            Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
