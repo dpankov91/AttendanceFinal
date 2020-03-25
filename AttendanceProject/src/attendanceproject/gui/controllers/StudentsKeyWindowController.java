@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -56,9 +57,6 @@ public class StudentsKeyWindowController implements Initializable {
        Platform.exit(); 
     }
 
-    @FXML
-    private void readAboutApp(ActionEvent event) {
-    }
 
     @FXML
     private void clickLogOut(ActionEvent event) throws IOException 
@@ -89,5 +87,22 @@ public class StudentsKeyWindowController implements Initializable {
         s.setScene(scene);
         s.show();
     }
+     
+    private void setUpAlert(String title, String message){
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
+    }
     
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window, you need to enter the key in order to check attendance.");
+    }
+    
+     @FXML
+    private void keyIsNotWorking(ActionEvent event) throws IOException{
+        setUpAlert("Key is not working" , "Please check for spelling mistakes. Contact the team if the problem persists.");
+    }
 }

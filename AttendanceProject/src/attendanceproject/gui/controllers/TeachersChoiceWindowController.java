@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 /**
@@ -88,9 +89,26 @@ public class TeachersChoiceWindowController implements Initializable {
     {
         Platform.exit();
     }
-
-    @FXML
-    private void readAboutApp(ActionEvent event) {
+    
+    private void setUpAlert(String title, String message){
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
     
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "This is the main window, you can access your overview or generate a key.");
+    }
+    @FXML
+    private void generateKeyHelp(ActionEvent event) {
+        setUpAlert("Generate key" , "Press the left circular button to access the generate key window");
+    }
+    
+    @FXML
+    private void goToOverviewHelp(ActionEvent event) {
+    setUpAlert("Overview" , "Press the right circular button to access your overview window");
+    }
 }

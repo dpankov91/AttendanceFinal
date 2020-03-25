@@ -97,10 +97,6 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         Platform.exit();
     }
 
-    @FXML
-    private void readAboutApp(ActionEvent event) {
-    }
-
     public void showDate() 
     {
         Date date = new Date();
@@ -116,5 +112,13 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         alert.showAndWait();
     }
     
-    
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window you can generate a key");
+    }
+    @FXML
+    private void cantGenerateAKey(ActionEvent event) {
+        setUpAlert("I can't generate a key" , "A key must have at least 3 letters. Check the key again");
+
+}   
 }

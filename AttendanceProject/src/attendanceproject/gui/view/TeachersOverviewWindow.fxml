@@ -11,7 +11,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.TeachersOverviewWindowController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -51,7 +50,9 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#openAboutTeachOverview" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#studentsAreMissing" text="Some students are missing" />
+                  <MenuItem mnemonicParsing="false" onAction="#dataIsIncorrectTeacher" text="Data is incorrect" />
             </items>
           </Menu>
         </menus>

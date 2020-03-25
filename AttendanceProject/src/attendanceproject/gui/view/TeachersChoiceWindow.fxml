@@ -43,6 +43,8 @@
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#generateKeyHelp" text="Generate key" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToOverviewHelp" text="Go to overview" />
             </items>
           </Menu>
         </menus>

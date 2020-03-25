@@ -58,6 +58,7 @@
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#dataIsIncorrect" text="Data is incorrect" />
             </items>
           </Menu>
         </menus>

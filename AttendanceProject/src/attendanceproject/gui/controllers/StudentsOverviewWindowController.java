@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -19,6 +20,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -157,8 +159,21 @@ public class StudentsOverviewWindowController implements Initializable {
         Platform.exit();
     }
 
-    @FXML
-    private void readAboutApp(ActionEvent event) {
+    private void setUpAlert(String title, String message){
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
     
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window, you can see in detail daily and monthly attendance statistics.");
+    }
+    
+    @FXML
+    private void dataIsIncorrect(ActionEvent event) {
+    setUpAlert("Data is incorrect" , "If you think there is an error in the data contact your teacher to check for any mistakes");
+    }
 }

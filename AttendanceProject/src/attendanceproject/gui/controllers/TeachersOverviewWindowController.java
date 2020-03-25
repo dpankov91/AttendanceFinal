@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -65,9 +66,28 @@ public class TeachersOverviewWindowController implements Initializable {
         Platform.exit();
     }
 
-    @FXML
-    private void openAboutTeachOverview(ActionEvent event) 
-    {
+
+
+  
+    private void setUpAlert(String title, String message){
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
     
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window you can change a password");
+    }
+    @FXML
+    private void studentsAreMissing(ActionEvent event) {
+        setUpAlert("Some students are missing" , "Please contact the team so they can add your students to the database");
+}
+
+    @FXML
+    private void dataIsIncorrectTeacher(ActionEvent event) {
+         setUpAlert("Data is incorrect" , "Please contact the team so they can correct the mistakes in the database");
+    }
 }
