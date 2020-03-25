@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -55,12 +56,22 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     
     private void insertTodaysKey()
     {
-        String todaysKey = txtNewKey.getText();
+        String todaysKey = txtNewKey.getText().trim();
         model.insertKey(todaysKey);
+        txtNewKey.clear();
+        setUpAlert("Success", "Todays Key is generated");
+        closeWindow();
+        
     }
 
     @FXML
     private void clickBack(ActionEvent event) 
+    {
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
+    }
+    
+    private void closeWindow() 
     {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
@@ -77,11 +88,19 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     private void readAboutApp(ActionEvent event) {
     }
 
-    public void showDate() {
+    public void showDate() 
+    {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat ("dd/MM/yyyy");
         lblTodaysDate.setText(dateFormat.format(date));
+    }
+    
+    private void setUpAlert(String title, String message){
         
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
     
     
