@@ -5,6 +5,7 @@
  */
 package attendanceproject.dal.dao;
 
+import attendanceproject.dal.DbConnectionProvider;
 import attendanceproject.be.User;
 import attendanceproject.util.exception.Exceptions;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
@@ -22,9 +23,10 @@ public class UserDAO {
     
     private final DbConnectionProvider connector;
 
-    public UserDAO()    
+    public UserDAO(DbConnectionProvider connector)    
     {
-        connector = new DbConnectionProvider();
+        this.connector = connector;
+        //connector = new DbConnectionProvider();
     }
 
     public User getUser(String username, String password) throws SQLServerException, SQLException
@@ -59,6 +61,10 @@ public class UserDAO {
         PreparedStatement pstmt = con.prepareStatement(sql);
         //pstmt.setString(1, todaysKey);
         //ResultSet rs = pstmt.executeQuery();        
+    }
+
+    public boolean confirmKey(String key) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

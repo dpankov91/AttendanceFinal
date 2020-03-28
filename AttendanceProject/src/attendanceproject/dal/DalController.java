@@ -24,7 +24,8 @@ public class DalController implements DalFacade {
 
     public DalController() 
     {
-        userDao = new UserDAO();
+        DbConnectionProvider connector = new DbConnectionProvider();
+        userDao = new UserDAO(connector);
     }
     
     @Override
@@ -56,6 +57,12 @@ public class DalController implements DalFacade {
         } catch (SQLException ex) {
             Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    @Override
+    public void hasConfirmedKey(boolean isKeyConfirmed) {
+        
+        userDao.hasConfirmedKey(isKeyConfirmed);
     }
 
 }

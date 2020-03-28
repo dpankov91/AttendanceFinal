@@ -11,12 +11,20 @@ package attendanceproject.be;
  */
 public class TodaysKey 
 {
-    String key;
+    private String key;
+    private int id;
+    private LocaleDate date;
 
-    public TodaysKey(String key) {
+    public TodaysKey(int id, String key, LocaleDate date) {
+        this.id = id;
         this.key = key;
+        this.date = date;
     }
 
+    public int getId() {
+        return id;
+    }
+    
     public String getKey() {
         return key;
     }
@@ -24,6 +32,15 @@ public class TodaysKey
     public void setKey(String key) {
         this.key = key;
     }
+
+    public LocaleDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocaleDate date) {
+        this.date = date;
+    }
+
     
     
     

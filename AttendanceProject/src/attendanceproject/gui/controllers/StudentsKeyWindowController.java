@@ -39,6 +39,8 @@ public class StudentsKeyWindowController implements Initializable {
     private JFXButton btnConfirmStudents;
     
     MainModel model;
+    
+    private boolean isKeyConfirmed;
 
     /**
      * Initializes the controller class.
@@ -76,6 +78,15 @@ public class StudentsKeyWindowController implements Initializable {
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) 
     {
+      boolean isKeyCorrect = model.confirmKey(txtTodaysKey.getText());
+      if(isKeyCorrect)
+      {
+          //show alert that attendance is confirmed
+      }
+      else
+      {
+          //show alert that user entered incorrect key
+      }
       
     }
 

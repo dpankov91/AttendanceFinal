@@ -17,4 +17,6 @@ public interface BllFacade {
 
     public void addKey(String todaysKey);
     
+    public boolean confirmKey(String key);
+    
 }
