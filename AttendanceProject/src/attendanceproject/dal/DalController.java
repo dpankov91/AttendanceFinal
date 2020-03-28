@@ -65,4 +65,11 @@ public class DalController implements DalFacade {
         userDao.hasConfirmedKey(isKeyConfirmed);
     }
 
+    @Override
+    public void confirmKey(String key) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
 }

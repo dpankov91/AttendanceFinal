@@ -7,6 +7,7 @@ package attendanceproject.bll;
 
 import attendanceproject.be.User;
 import attendanceproject.dal.DalController;
+import attendanceproject.dal.DalFacade;
 import attendanceproject.util.exception.Exceptions;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class BllManager implements BllFacade{
     
-    private DalController dalController;
+    private DalFacade dalController;
 
     public BllManager()
     {
@@ -45,7 +46,7 @@ public class BllManager implements BllFacade{
 
     @Override
     public boolean confirmKey(String key) {
-        dalController.confirmKey(String key);
+        dalController.confirmKey(key);
         return true;
     }
     

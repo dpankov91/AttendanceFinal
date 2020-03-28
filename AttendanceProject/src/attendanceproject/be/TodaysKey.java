@@ -5,6 +5,8 @@
  */
 package attendanceproject.be;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author dpank
@@ -13,9 +15,9 @@ public class TodaysKey
 {
     private String key;
     private int id;
-    private LocaleDate date;
+    private LocalDate date;
 
-    public TodaysKey(int id, String key, LocaleDate date) {
+    public TodaysKey(int id, String key, LocalDate date) {
         this.id = id;
         this.key = key;
         this.date = date;
@@ -33,11 +35,11 @@ public class TodaysKey
         this.key = key;
     }
 
-    public LocaleDate getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocaleDate date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

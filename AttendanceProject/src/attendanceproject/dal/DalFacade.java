@@ -19,5 +19,7 @@ public interface DalFacade {
     public void addKey(String todaysKey);
     
     public void hasConfirmedKey(boolean isKeyConfirmed);
+
+    public void confirmKey(String key);
     
 }
