@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -68,9 +69,22 @@ public class TeachersEditPasswordWindowController implements Initializable {
        Platform.exit();
 
     }
-
-    @FXML
-    private void readAboutApp(ActionEvent event) {
+    
+     private void setUpAlert(String title, String message){
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+        alert.showAndWait();
     }
     
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window you can change a password");
+    }
+    @FXML
+    private void iCantChangePassword(ActionEvent event) {
+        setUpAlert("I can't change the password" , "Please check that both passwords match");
+
+}
 }

@@ -54,12 +54,12 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     }    
     
     @FXML
-    private void clickSaveNewKey(ActionEvent event) 
+    private void clickSaveNewKey(ActionEvent event) throws IOException 
     {
         insertTodaysKey();
     }
     
-    private void insertTodaysKey()
+    private void insertTodaysKey() throws IOException
     {
         if(txtNewKey.getText().trim().length() > 3)
         {
@@ -67,7 +67,7 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         model.insertKey(todaysKey);
         txtNewKey.clear();
         setUpAlert("Success", "Todays Key is generated");
-        closeWindow();
+        goBack();
         } else{
             setUpAlert("Too short key", "Key must be at least 3 letters.");
         }
@@ -85,6 +85,19 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         closeWindow();
     }
     
+    private void goBack() throws IOException 
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
+        Parent z = loader.load();
+        Scene scene = new Scene(z);
+        Stage s = new Stage();
+        s.setScene(scene);
+        s.show();
+        closeWindow();
+    }
+    
+    
+    
     private void closeWindow() 
     {
         Stage stage = (Stage) btnBack.getScene().getWindow();
@@ -95,10 +108,6 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     private void closeApp(ActionEvent event) 
     {
         Platform.exit();
-    }
-
-    @FXML
-    private void readAboutApp(ActionEvent event) {
     }
 
     public void showDate() 
@@ -116,5 +125,13 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         alert.showAndWait();
     }
     
-    
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window you can generate a key");
+    }
+    @FXML
+    private void cantGenerateAKey(ActionEvent event) {
+        setUpAlert("I can't generate a key" , "A key must have at least 3 letters. Check the key again");
+
+}   
 }

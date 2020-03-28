@@ -51,6 +51,7 @@
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#readAboutApp" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#cantGenerateAKey" text="I can't generate a key" />
             </items>
           </Menu>
         </menus>

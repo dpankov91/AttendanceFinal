@@ -56,10 +56,6 @@ public class LogInWindowController implements Initializable {
     }
 
     @FXML
-    private void readAboutApp(ActionEvent event) {
-    }
-
-    @FXML
     private void clickLogIn(ActionEvent event) throws IOException 
     {
         checkIfFieldsAreEmpty();
@@ -118,5 +114,14 @@ public class LogInWindowController implements Initializable {
     {
         Stage stage = (Stage) btnLogIn.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    private void forgotYourPassword(ActionEvent event) {
+        setUpAlert("Forgot your password?" , "If you forgot your password, please contact the team as soon as possible, so they can help you in that regard.");
+    }
+    @FXML
+    private void readAboutApp(ActionEvent event) throws IOException{
+        setUpAlert("About" , "On this window, you need to log in using your individual username and password.");
     }
 }
