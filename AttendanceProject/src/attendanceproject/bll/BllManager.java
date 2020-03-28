@@ -18,18 +18,18 @@ import java.util.logging.Logger;
  */
 public class BllManager implements BllFacade{
     
-    private DalFacade dalController;
+    private DalFacade dalFacade;
 
     public BllManager()
     {
-        this.dalController = new DalController();
+        this.dalFacade = new DalController();
     }
 
     @Override
     public User getUser(String username, String password) 
     {
         try {    
-            return dalController.getUser(username, password);
+            return dalFacade.getUser(username, password);
         } catch (Exceptions ex) {
             
 
@@ -41,12 +41,12 @@ public class BllManager implements BllFacade{
     @Override
     public void addKey(String todaysKey) 
     {
-        dalController.addKey(todaysKey);
+        dalFacade.addKey(todaysKey);
     }
 
     @Override
     public boolean confirmKey(String key) {
-        dalController.confirmKey(key);
+        dalFacade.confirmKey(key);
         return true;
     }
     

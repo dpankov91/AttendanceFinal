@@ -6,6 +6,7 @@
 package attendanceproject.gui.model;
 
 import attendanceproject.be.User;
+import attendanceproject.bll.BllFacade;
 import attendanceproject.bll.BllManager;
 
 /**
@@ -14,22 +15,22 @@ import attendanceproject.bll.BllManager;
  */
 public class MainModel 
 {
-    private BllManager bllManager;
+    private BllFacade facade;
     private User loggedInUser;
 
     public MainModel() 
     {
-    this.bllManager = new BllManager();
+    this.facade = new BllManager();
     }
     
     public User loginUser(String username, String password)
     {
-       return loggedInUser =  bllManager.getUser(username, password);
+       return loggedInUser =  facade.getUser(username, password);
     } 
 
     public void insertKey(String todaysKey) 
     {
-        bllManager.addKey(todaysKey);
+        facade.addKey(todaysKey);
     }
     
     //public void hasConfirmedKey(boolean isKeyConfirmed) {
