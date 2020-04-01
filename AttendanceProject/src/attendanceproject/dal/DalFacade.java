@@ -7,6 +7,7 @@ package attendanceproject.dal;
 
 import attendanceproject.be.User;
 import attendanceproject.util.exception.Exceptions;
+import java.util.List;
 
 /**
  *
@@ -21,5 +22,7 @@ public interface DalFacade {
     public void hasConfirmedKey(boolean isKeyConfirmed);
 
     public void confirmKey(String key);
+
+    public List<User> getAllStudets();
     
 }

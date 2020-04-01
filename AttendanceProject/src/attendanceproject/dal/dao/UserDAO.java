@@ -11,9 +11,15 @@ import attendanceproject.util.exception.Exceptions;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -58,9 +64,7 @@ public class UserDAO {
         String sql = "INSERT INTO [dbo].[KeyHolder]([Key]) VALUES (?)";
        
         Connection con = connector.getConnection();
-        PreparedStatement pstmt = con.prepareStatement(sql);
-        //pstmt.setString(1, todaysKey);
-        //ResultSet rs = pstmt.executeQuery();        
+        PreparedStatement pstmt = con.prepareStatement(sql);     
     }
 
     public boolean confirmKey(String key) {
@@ -69,6 +73,31 @@ public class UserDAO {
 
     public void hasConfirmedKey(boolean keyConfirmed) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<User> getAllStudents() throws SQLException 
+    {
+        ArrayList<User> allStudents = new ArrayList<>();
+        
+        String sql = "SELECT * FROM [dbo].[User]";
+        
+        Connection con = connector.getConnection();
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        
+        while (rs.next()) 
+            {
+                Integer id = rs.getInt("id");
+                String Fname = rs.getString("Fname");
+                String Lname = rs.getString("Lname");
+                boolean isTeacher = rs.getBoolean("teacher");
+                if(isTeacher == false){
+                     allStudents.add(new User(id, Fname, Lname, isTeacher));
+                }  
+            }
+                return allStudents;
+               
+        
     }
 
 }

@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,10 +7,15 @@
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.be.User;
+import attendanceproject.gui.model.MainModel;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +26,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -29,11 +37,11 @@ import javafx.stage.Stage;
 public class TeachersOverviewWindowController implements Initializable {
 
     @FXML
-    private TableView<?> studentsTable;
+    private TableView<User> studentsTable;
     @FXML
-    private TableColumn<?, ?> firstNameCol;
+    private TableColumn<User, String> firstNameCol;
     @FXML
-    private TableColumn<?, ?> secondNameCol;
+    private TableColumn<User, String> secondNameCol;
     @FXML
     private TableColumn<?, ?> attendanceCol;
     @FXML
@@ -42,9 +50,15 @@ public class TeachersOverviewWindowController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    MainModel mainModel;
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        mainModel = new MainModel();
+        
+        setUpTableView();
     }    
 
     @FXML
@@ -89,5 +103,22 @@ public class TeachersOverviewWindowController implements Initializable {
     @FXML
     private void dataIsIncorrectTeacher(ActionEvent event) {
          setUpAlert("Data is incorrect" , "Please contact the team so they can correct the mistakes in the database");
+    }
+    
+    private void setUpTableView()
+    {
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("Fname"));
+        secondNameCol.setCellValueFactory(new PropertyValueFactory<>("Lname"));
+        attendanceCol.setCellValueFactory(new PropertyValueFactory<>(""));
+        loadTableView();
+    }
+    
+    public void loadTableView()
+    {
+        studentsTable.getItems().clear();
+        List<User> allStudents = mainModel.getAllStudents();
+        ObservableList<User> students = FXCollections.observableArrayList();
+        students.addAll(allStudents);
+        studentsTable.setItems(students);
     }
 }

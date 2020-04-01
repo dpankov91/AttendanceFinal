@@ -8,6 +8,9 @@ package attendanceproject.gui.model;
 import attendanceproject.be.User;
 import attendanceproject.bll.BllFacade;
 import attendanceproject.bll.BllManager;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -17,6 +20,7 @@ public class MainModel
 {
     private BllFacade facade;
     private User loggedInUser;
+    private ObservableList<User> students = FXCollections.observableArrayList();
 
     public MainModel() 
     {
@@ -52,6 +56,11 @@ public class MainModel
         {
             return false;
         }    
+    }
+
+    public List<User> getAllStudents() 
+    {
+        return facade.getAllStudents();    
     }
     
 }

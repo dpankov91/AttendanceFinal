@@ -6,6 +6,7 @@
 package attendanceproject.bll;
 
 import attendanceproject.be.User;
+import java.util.List;
 
 /**
  *
@@ -18,5 +19,7 @@ public interface BllFacade {
     public void addKey(String todaysKey);
     
     public boolean confirmKey(String key);
+
+    List<User> getAllStudents();
     
 }
