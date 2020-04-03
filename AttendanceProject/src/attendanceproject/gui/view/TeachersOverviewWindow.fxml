@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -10,6 +11,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.TeachersOverviewWindowController">
    <children>
@@ -37,6 +39,10 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <StackPane fx:id="bigStack" layoutX="26.0" layoutY="98.0" prefHeight="308.0" prefWidth="403.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="85.0" />
+                  <Label layoutX="37.0" layoutY="42.0" prefHeight="26.0" prefWidth="102.0" text="Choosen Student:" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="42.0" />
+                  <Label fx:id="lblName" layoutX="147.0" layoutY="43.0" prefHeight="26.0" prefWidth="158.0" />
+                  <Button layoutX="318.0" layoutY="43.0" mnemonicParsing="false" text="Get Info" />
                </children>
             </AnchorPane>
         </items>

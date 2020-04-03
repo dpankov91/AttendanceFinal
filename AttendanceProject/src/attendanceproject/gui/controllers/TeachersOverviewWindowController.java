@@ -24,9 +24,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -53,12 +56,20 @@ public class TeachersOverviewWindowController implements Initializable {
     
     MainModel mainModel;
     
+    private ComboBox cmbPieCalender;
+    @FXML
+    private StackPane bigStack;
+    @FXML
+    private Label lblName;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         mainModel = new MainModel();
         
         setUpTableView();
+        setStudentName();
+                
     }    
 
     @FXML
@@ -121,4 +132,14 @@ public class TeachersOverviewWindowController implements Initializable {
         students.addAll(allStudents);
         studentsTable.setItems(students);
     }
-}
+    
+    private void setStudentName()
+    {
+        User name = studentsTable.getSelectionModel().getSelectedItem();
+        if(name != null)
+        lblName.setText(name.getFname());
+    }
+        
+        
+    }
+
