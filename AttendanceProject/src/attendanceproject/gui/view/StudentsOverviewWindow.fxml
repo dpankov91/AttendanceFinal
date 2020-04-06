@@ -14,7 +14,7 @@
           <TableColumn fx:id="statusColumn" prefWidth="110.0" text="STATUS" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" layoutY="-7.0" prefHeight="35.0" prefWidth="539.0" text="NAME OF STUDENT" />
+      <Label fx:id="lblStudentName" alignment="CENTER" layoutY="-7.0" prefHeight="35.0" prefWidth="539.0" text="NAME OF STUDENT" />
       <PieChart fx:id="statisticsPieChart" layoutX="242.0" layoutY="96.0" prefHeight="203.0" prefWidth="262.0" title="Total Attendance Statistics" />
    </children>
 </AnchorPane>
