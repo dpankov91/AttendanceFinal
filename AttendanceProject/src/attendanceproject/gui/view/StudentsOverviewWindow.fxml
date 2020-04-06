@@ -10,11 +10,11 @@
    <children>
       <TableView layoutY="26.0" prefHeight="368.0" prefWidth="220.0">
         <columns>
-          <TableColumn prefWidth="108.0" text="DATE" />
-          <TableColumn prefWidth="110.0" text="STATUS" />
+          <TableColumn fx:id="dateColumn" prefWidth="108.0" text="DATE" />
+          <TableColumn fx:id="statusColumn" prefWidth="110.0" text="STATUS" />
         </columns>
       </TableView>
       <Label alignment="CENTER" layoutY="-7.0" prefHeight="35.0" prefWidth="539.0" text="NAME OF STUDENT" />
-      <PieChart layoutX="242.0" layoutY="96.0" prefHeight="203.0" prefWidth="262.0" title="Total Attendance Stattistics" />
+      <PieChart fx:id="statisticsPieChart" layoutX="242.0" layoutY="96.0" prefHeight="203.0" prefWidth="262.0" title="Total Attendance Statistics" />
    </children>
 </AnchorPane>

@@ -5,175 +5,33 @@
  */
 package attendanceproject.gui.controllers;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.control.TableColumn;
 
 /**
  * FXML Controller class
  *
- * @author dpank
+ * @author hp
  */
 public class StudentsOverviewWindowController implements Initializable {
 
     @FXML
-    private PieChart pieChart;
+    private TableColumn<?, ?> dateColumn;
     @FXML
-    private NumberAxis daysAxis;
+    private TableColumn<?, ?> statusColumn;
     @FXML
-    private CategoryAxis monthsAxis;
-    @FXML
-    private BarChart<?, ?> monthlyBarChart;
-    @FXML
-    private Button btnBack;
-    @FXML
-    private PieChart pieTuesday;
-    @FXML
-    private PieChart pieFriday;
-    @FXML
-    private PieChart pieMonday;
-    @FXML
-    private PieChart pieWednesday;
-    @FXML
-    private PieChart pieThursday;
+    private PieChart statisticsPieChart;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        loadDataPieChartAllAttendance(); 
-        loadDataBarChartMonthlyAttendance();
-        loadDataPieMonday();
-        loadDataPieTuesday();
-        loadDataPieWednesday();
-        loadDataPieThursday();        
-        loadDataPieFriday();
-        
+        // TODO
     }    
     
-    private void loadDataPieChartAllAttendance()
-    {
-     ObservableList<PieChart.Data>pieCharData = FXCollections.observableArrayList
-        (
-                new PieChart.Data("Not In Class", 27),
-                new PieChart.Data("In Class", 73));
-        
-        pieChart.setData(pieCharData);     
-    }
-    
-    private void loadDataBarChartMonthlyAttendance()
-    {
-        XYChart.Series monthStat = new XYChart.Series();
-        monthStat.getData().add(new XYChart.Data("September", 20));
-        monthStat.getData().add(new XYChart.Data("October", 22));
-        monthStat.getData().add(new XYChart.Data("November", 26));
-        monthStat.getData().add(new XYChart.Data("December", 14));
-        monthStat.getData().add(new XYChart.Data("January", 16));
-        monthStat.getData().add(new XYChart.Data("February", 25));
-        monthStat.getData().add(new XYChart.Data("March", 0));
-        monthStat.getData().add(new XYChart.Data("April", 0));
-        monthStat.getData().add(new XYChart.Data("May", 0));
-        
-        monthlyBarChart.getData().add(monthStat);
-    }
-    
-    private void loadDataPieMonday()
-    {
-        ObservableList<PieChart.Data>mondayData = FXCollections.observableArrayList
-        (
-                new PieChart.Data("Not In Class", 3),
-                new PieChart.Data("In Class", 9));
-        
-        pieMonday.setData(mondayData); 
-    }
-    
-    private void loadDataPieTuesday()
-    {
-        ObservableList<PieChart.Data>tuesdayData = FXCollections.observableArrayList
-        (
-                new PieChart.Data("Not In Class", 4),
-                new PieChart.Data("In Class",8));
-        
-        pieTuesday.setData(tuesdayData); 
-    }
-    
-    private void loadDataPieWednesday()
-    {
-        ObservableList<PieChart.Data>wednesdayData = FXCollections.observableArrayList
-        (
-                new PieChart.Data("Not In Class", 1),
-                new PieChart.Data("In Class", 11));
-        
-        pieWednesday.setData(wednesdayData); 
-    }
-    
-    private void loadDataPieThursday()
-    {
-        ObservableList<PieChart.Data>thursdayData = FXCollections.observableArrayList
-        (
-                new PieChart.Data("Not In Class", 2),
-                new PieChart.Data("In Class", 10));
-        
-        pieThursday.setData(thursdayData); 
-    }
-    
-    private void loadDataPieFriday()
-    {
-        ObservableList<PieChart.Data>fridayData = FXCollections.observableArrayList
-        (
-                new PieChart.Data("Not In Class", 5),
-                new PieChart.Data("In Class", 7));
-        
-        pieFriday.setData(fridayData); 
-    }
-            
-
-    @FXML
-    private void clickBack(ActionEvent event) 
-    {
-        
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    private void closeApp(ActionEvent event) 
-    {
-        Platform.exit();
-    }
-
-    private void setUpAlert(String title, String message){
-        
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(message);
-        alert.showAndWait();
-    }
-    
-    @FXML
-    private void readAboutApp(ActionEvent event) throws IOException{
-        setUpAlert("About" , "On this window, you can see in detail daily and monthly attendance statistics.");
-    }
-    
-    @FXML
-    private void dataIsIncorrect(ActionEvent event) {
-    setUpAlert("Data is incorrect" , "If you think there is an error in the data contact your teacher to check for any mistakes");
-    }
 }
