@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.StudentsOverviewWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="539.0" stylesheets="@../css/styleDmitri.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.StudentsOverviewWindowController">
    <children>
       <TableView layoutY="26.0" prefHeight="368.0" prefWidth="220.0">
         <columns>
@@ -14,8 +14,7 @@
           <TableColumn prefWidth="110.0" text="STATUS" />
         </columns>
       </TableView>
-      <Label layoutY="-7.0" prefHeight="35.0" prefWidth="539.0" text="NAME OF STUDENT" textAlignment="CENTER" />
-      <Label layoutX="243.0" layoutY="101.0" prefHeight="42.0" prefWidth="197.0" text="TOTAL ATTENDANCE STATISTICS:" textAlignment="CENTER" />
-      <PieChart layoutX="243.0" layoutY="149.0" prefHeight="203.0" prefWidth="262.0" />
+      <Label alignment="CENTER" layoutY="-7.0" prefHeight="35.0" prefWidth="539.0" text="NAME OF STUDENT" />
+      <PieChart layoutX="242.0" layoutY="96.0" prefHeight="203.0" prefWidth="262.0" title="Total Attendance Stattistics" />
    </children>
 </AnchorPane>
