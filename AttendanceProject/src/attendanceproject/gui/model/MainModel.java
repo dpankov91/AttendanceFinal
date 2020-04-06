@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.model;
 
+import attendanceproject.be.AttendanceData;
 import attendanceproject.be.User;
 import attendanceproject.bll.BllFacade;
 import attendanceproject.bll.BllManager;
@@ -21,7 +22,7 @@ public class MainModel
     private BllFacade facade;
     private User loggedInUser;
     private ObservableList<User> students = FXCollections.observableArrayList();
-
+ private ObservableList<AttendanceData> studentData = FXCollections.observableArrayList();
     public MainModel() 
     {
     this.facade = new BllManager();
@@ -61,6 +62,13 @@ public class MainModel
     public List<User> getAllStudents() 
     {
         return facade.getAllStudents();    
+    }
+    
+    
+    
+    public ObservableList getAllDateForStudent(User us){
+        studentData.addAll(facade.getAllDateForStudent(us));
+        return studentData;
     }
     
 }

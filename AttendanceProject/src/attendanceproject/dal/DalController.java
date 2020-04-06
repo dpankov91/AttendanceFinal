@@ -83,6 +83,12 @@ public class DalController implements DalFacade {
         return null;
     }
 
+    @Override
+    public List getAllDateForStudent(User us) {
+    List allStudents = userDao.getAllDateForStudent(us); 
+      return allStudents;
+    }
+
    
 
 }

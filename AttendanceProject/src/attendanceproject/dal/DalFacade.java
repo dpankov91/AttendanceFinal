@@ -24,5 +24,7 @@ public interface DalFacade {
     public void confirmKey(String key);
 
     public List<User> getAllStudets();
+
+    public List getAllDateForStudent(User us);
     
 }

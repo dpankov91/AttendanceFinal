@@ -5,7 +5,11 @@
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.be.AttendanceData;
+import attendanceproject.be.User;
+import attendanceproject.gui.model.MainModel;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,35 +25,51 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author hp
  */
 public class StudentsOverviewWindowController implements Initializable {
+
     @FXML
-    private TableView<?> studentTableView;
+    private TableView<AttendanceData> studentTableView;
     @FXML
-    private TableColumn<?, ?> dateColumn;
+    private TableColumn<AttendanceData, LocalDate> dateColumn;
     @FXML
-    private TableColumn<?, ?> statusColumn;
+    private TableColumn<AttendanceData, Boolean> statusColumn;
     @FXML
     private PieChart statisticsPieChart;
     @FXML
     private Label lblStudentName;
-    
+
+    private User us;
+
+    private MainModel model;
 
     /**
      * Initializes the controller class.
+     *
      * @param url
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    private void setUpTableView()
-    {
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("DATE"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("STATUS"));
-       
+        model = new MainModel();
+        setUpTableView();
+    }
+
+    private void setUpTableView() {
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+
         loadTableView();
     }
 
+    //Get user 
+    //call database and get relevent data
+    //populate table view
     private void loadTableView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(us);
+        studentTableView.getItems().addAll(model.getAllDateForStudent(us));
+
+    }
+
+    void setUser(User us) {
+        this.us = us;
     }
 }

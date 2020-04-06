@@ -7,6 +7,7 @@ package attendanceproject.bll;
 
 import attendanceproject.be.User;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -21,5 +22,7 @@ public interface BllFacade {
     public boolean confirmKey(String key);
 
     List<User> getAllStudents();
+
+    public List getAllDateForStudent(User us);
     
 }

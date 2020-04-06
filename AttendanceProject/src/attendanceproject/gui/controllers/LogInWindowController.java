@@ -104,6 +104,8 @@ public class LogInWindowController implements Initializable {
             Parent z = loader.load();
             Scene scene = new Scene(z);
             Stage s = new Stage();
+                loader.<StudentsKeyWindowController>getController().setUser(us); //Sets controler by default for both creating and editing categories
+       
             s.setScene(scene);
             s.show();
             closeWindow();

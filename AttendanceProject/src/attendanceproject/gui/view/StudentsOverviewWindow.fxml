@@ -8,11 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="539.0" stylesheets="@../css/styleDmitri.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceproject.gui.controllers.StudentsOverviewWindowController">
    <children>
-
       <TableView fx:id="studentTableView" layoutY="26.0" prefHeight="368.0" prefWidth="220.0">
-
-      <TableView fx:id="tableDateAndStatus" layoutY="26.0" prefHeight="368.0" prefWidth="220.0">
-
         <columns>
           <TableColumn fx:id="dateColumn" prefWidth="108.0" text="DATE" />
           <TableColumn fx:id="statusColumn" prefWidth="110.0" text="STATUS" />

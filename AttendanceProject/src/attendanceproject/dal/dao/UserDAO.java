@@ -5,6 +5,7 @@
  */
 package attendanceproject.dal.dao;
 
+import attendanceproject.be.AttendanceData;
 import attendanceproject.dal.DbConnectionProvider;
 import attendanceproject.be.User;
 import attendanceproject.util.exception.Exceptions;
@@ -98,6 +99,16 @@ public class UserDAO {
                 return allStudents;
                
         
+    }
+
+    public List getAllDateForStudent(User us) {
+    ArrayList<AttendanceData> specifiedData = new ArrayList<>(); 
+    specifiedData.add(new AttendanceData( LocalDate.now()  , false));
+    specifiedData.add(new AttendanceData( LocalDate.now()  , true));
+    specifiedData.add(new AttendanceData( LocalDate.now()  , true));
+    specifiedData.add(new AttendanceData( LocalDate.now()  , false));
+    specifiedData.add(new AttendanceData( LocalDate.now()  , false));
+    return specifiedData;
     }
 
 }

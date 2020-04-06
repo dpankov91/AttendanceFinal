@@ -5,6 +5,7 @@
  */
 package attendanceproject.gui.controllers;
 
+import attendanceproject.be.User;
 import attendanceproject.gui.model.MainModel;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -38,31 +39,30 @@ public class StudentsKeyWindowController implements Initializable {
     private TextField txtTodaysKey;
     @FXML
     private JFXButton btnConfirmStudents;
-    
+
     MainModel model;
-    
+
     private boolean isKeyConfirmed;
+
+    private User us;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-       model = new MainModel();
-       btnConfirmStudents.setId("btnConfirmStudents");
-    }    
 
-    @FXML
-    private void closeApp(ActionEvent event) 
-    {
-       Platform.exit(); 
+        model = new MainModel();
+        btnConfirmStudents.setId("btnConfirmStudents");
     }
 
+    @FXML
+    private void closeApp(ActionEvent event) {
+        Platform.exit();
+    }
 
     @FXML
-    private void clickLogOut(ActionEvent event) throws IOException 
-    {
+    private void clickLogOut(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/LogInWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
@@ -74,46 +74,47 @@ public class StudentsKeyWindowController implements Initializable {
     }
 
     @FXML
-    private void clickEnterTodaysKey(ActionEvent event) 
-    {
-      boolean isKeyCorrect = model.confirmKey(txtTodaysKey.getText());
-      if(isKeyCorrect)
-      {
-          //show alert that attendance is confirmed
-      }
-      else
-      {
-          //show alert that user entered incorrect key
-      }
-      
+    private void clickEnterTodaysKey(ActionEvent event) {
+        boolean isKeyCorrect = model.confirmKey(txtTodaysKey.getText());
+        if (isKeyCorrect) {
+            //show alert that attendance is confirmed
+        } else {
+            //show alert that user entered incorrect key
+        }
+
     }
 
     @FXML
-    private void clickGoToStudentsOverview(ActionEvent event) throws IOException 
-    {
+    private void clickGoToStudentsOverview(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/StudentsOverviewWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
+        loader.<StudentsOverviewWindowController>getController().setUser(us); //Sets controler by default for both creating and editing categories
+
         Stage s = new Stage();
         s.setScene(scene);
         s.show();
     }
-     
-    private void setUpAlert(String title, String message){
-        
+
+    private void setUpAlert(String title, String message) {
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(message);
         alert.showAndWait();
     }
-    
+
     @FXML
-    private void readAboutApp(ActionEvent event) throws IOException{
-        setUpAlert("About" , "On this window, you need to enter the key in order to check attendance.");
+    private void readAboutApp(ActionEvent event) throws IOException {
+        setUpAlert("About", "On this window, you need to enter the key in order to check attendance.");
     }
-    
-     @FXML
-    private void keyIsNotWorking(ActionEvent event) throws IOException{
-        setUpAlert("Key is not working" , "Please check for spelling mistakes. Contact the team if the problem persists.");
+
+    @FXML
+    private void keyIsNotWorking(ActionEvent event) throws IOException {
+        setUpAlert("Key is not working", "Please check for spelling mistakes. Contact the team if the problem persists.");
+    }
+
+    void setUser(User us) {
+        this.us = us;
     }
 }

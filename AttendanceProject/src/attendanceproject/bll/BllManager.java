@@ -14,6 +14,7 @@ import attendanceproject.util.exception.Exceptions;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -60,6 +61,11 @@ public class BllManager implements BllFacade{
     public List<User> getAllStudents() 
     {
         return dalFacade.getAllStudets();
+    }
+
+    @Override
+    public List getAllDateForStudent(User us) {
+      return dalFacade.getAllDateForStudent(us);
     }
     
 }
