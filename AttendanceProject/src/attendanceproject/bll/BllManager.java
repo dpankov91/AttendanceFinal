@@ -11,6 +11,7 @@ import attendanceproject.bll.security.SecurityManager;
 import attendanceproject.dal.DalController;
 import attendanceproject.dal.DalFacade;
 import attendanceproject.util.exception.Exceptions;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,9 +47,9 @@ public class BllManager implements BllFacade{
     }
 
     @Override
-    public void addKey(String todaysKey) 
+    public void addKey(String todaysKey, LocalDate dateNow) 
     {
-        dalFacade.addKey(todaysKey);
+        dalFacade.addKey(todaysKey, dateNow);
     }
 
     @Override

@@ -7,6 +7,7 @@ package attendanceproject.dal;
 
 import attendanceproject.be.User;
 import attendanceproject.util.exception.Exceptions;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public interface DalFacade {
 
     public User getUser(String username, String password) throws Exceptions;
 
-    public void addKey(String todaysKey);
+    public void addKey(String todaysKey, LocalDate dateNow);
     
     public void hasConfirmedKey(boolean isKeyConfirmed);
 

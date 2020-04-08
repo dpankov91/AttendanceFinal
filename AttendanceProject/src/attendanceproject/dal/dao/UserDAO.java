@@ -60,20 +60,20 @@ public class UserDAO {
 }
     }
 
-    public void addKey(String todaysKey) throws SQLServerException, SQLException
+    public void addKey(String todaysKey, LocalDate dateNow) throws SQLServerException, SQLException
     {
-        String sql = "INSERT INTO [dbo].[KeyHolder]([Key]) VALUES (?)";
+        String sql = "INSERT INTO [dbo].[KeyHold]([key], [date]) VALUES (?, ?)";
        
         Connection con = connector.getConnection();
-        PreparedStatement pstmt = con.prepareStatement(sql);     
-    }
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        
+        Date date = java.sql.Date.valueOf(dateNow);
+        
+        pstmt.setString(1, todaysKey);
+        pstmt.setDate(2, date);
+        
+        pstmt.execute();
 
-    public boolean confirmKey(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void hasConfirmedKey(boolean keyConfirmed) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public List<User> getAllStudents() throws SQLException 

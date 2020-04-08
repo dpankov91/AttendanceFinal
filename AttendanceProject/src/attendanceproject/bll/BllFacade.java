@@ -6,6 +6,7 @@
 package attendanceproject.bll;
 
 import attendanceproject.be.User;
+import java.time.LocalDate;
 import java.util.List;
 import javafx.collections.ObservableList;
 
@@ -17,7 +18,7 @@ public interface BllFacade {
 
     public User getUser(String username, String password);
 
-    public void addKey(String todaysKey);
+    public void addKey(String todaysKey, LocalDate dateNow);
     
     public boolean confirmKey(String key);
 

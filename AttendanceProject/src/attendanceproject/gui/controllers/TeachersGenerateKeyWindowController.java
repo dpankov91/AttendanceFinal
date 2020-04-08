@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -64,7 +65,8 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         if(txtNewKey.getText().trim().length() > 3)
         {
         String todaysKey = txtNewKey.getText().trim();
-        model.insertKey(todaysKey);
+        LocalDate dateNow = LocalDate.now();
+        model.insertKey(todaysKey, dateNow);
         txtNewKey.clear();
         setUpAlert("Success", "Todays Key is generated");
         goBack();
@@ -129,9 +131,9 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     private void readAboutApp(ActionEvent event) throws IOException{
         setUpAlert("About" , "On this window you can generate a key");
     }
+
     @FXML
     private void cantGenerateAKey(ActionEvent event) {
-        setUpAlert("I can't generate a key" , "A key must have at least 3 letters. Check the key again");
-
-}   
+    }
+  
 }

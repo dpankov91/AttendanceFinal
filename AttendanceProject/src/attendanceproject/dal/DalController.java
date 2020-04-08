@@ -11,6 +11,7 @@ import attendanceproject.util.exception.Exceptions;
 import attendanceproject.util.exception.Exceptions.ErrorType;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,20 +52,20 @@ public class DalController implements DalFacade {
     }
 
     @Override
-    public void addKey(String todaysKey) 
+    public void addKey(String todaysKey, LocalDate dateNow) 
     {
         try {
-            userDao.addKey(todaysKey);
+            userDao.addKey(todaysKey, dateNow);
         } catch (SQLException ex) {
             Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    @Override
-    public void hasConfirmedKey(boolean isKeyConfirmed) {
-        
-        userDao.hasConfirmedKey(isKeyConfirmed);
-    }
+//    @Override
+//    public void hasConfirmedKey(boolean isKeyConfirmed) {
+//        
+//        userDao.hasConfirmedKey(isKeyConfirmed);
+//    }
 
     @Override
     public void confirmKey(String key) {
@@ -87,6 +88,11 @@ public class DalController implements DalFacade {
     public List getAllDateForStudent(User us) {
     List allStudents = userDao.getAllDateForStudent(us); 
       return allStudents;
+    }
+
+    @Override
+    public void hasConfirmedKey(boolean isKeyConfirmed) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

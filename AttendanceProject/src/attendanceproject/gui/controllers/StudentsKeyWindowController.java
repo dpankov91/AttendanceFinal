@@ -75,12 +75,23 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) {
-        boolean isKeyCorrect = model.confirmKey(txtTodaysKey.getText());
+        /*boolean isKeyCorrect = model.confirmKey(txtTodaysKey.getText());
         if (isKeyCorrect) {
             //show alert that attendance is confirmed
         } else {
             //show alert that user entered incorrect key
+        }*/
+        
+        String enteredKey = txtTodaysKey.getText();
+        String lastDbKey = model.getLastKey();
+        
+        if(enteredKey.equals(lastDbKey) ){
+            
         }
+        else{
+            
+        }
+             
 
     }
 

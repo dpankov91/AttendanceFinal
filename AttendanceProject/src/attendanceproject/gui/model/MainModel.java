@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -9,6 +9,7 @@ import attendanceproject.be.AttendanceData;
 import attendanceproject.be.User;
 import attendanceproject.bll.BllFacade;
 import attendanceproject.bll.BllManager;
+import java.time.LocalDate;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,7 +23,8 @@ public class MainModel
     private BllFacade facade;
     private User loggedInUser;
     private ObservableList<User> students = FXCollections.observableArrayList();
- private ObservableList<AttendanceData> studentData = FXCollections.observableArrayList();
+    private ObservableList<AttendanceData> studentData = FXCollections.observableArrayList();
+    
     public MainModel() 
     {
     this.facade = new BllManager();
@@ -33,9 +35,9 @@ public class MainModel
        return loggedInUser =  facade.getUser(username, password);
     } 
 
-    public void insertKey(String todaysKey) 
+    public void insertKey(String todaysKey, LocalDate dateNow) 
     {
-        facade.addKey(todaysKey);
+        facade.addKey(todaysKey, dateNow);
     }
     
     //public void hasConfirmedKey(boolean isKeyConfirmed) {
@@ -69,6 +71,10 @@ public class MainModel
     public ObservableList getAllDateForStudent(User us){
         studentData.addAll(facade.getAllDateForStudent(us));
         return studentData;
+    }
+
+    public String getLastKey() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
