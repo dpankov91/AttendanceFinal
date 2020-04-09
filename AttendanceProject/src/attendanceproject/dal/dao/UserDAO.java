@@ -57,7 +57,20 @@ public class UserDAO {
         User us = new User(id, firstName, lastName, isTeacher);
         
         return us;
-}
+        }
+    }
+    
+    public boolean checkForTodaysDate(LocalDate date) throws SQLException
+    {
+        String sql = "SELECT * FROM [dbo].[KeyHold] WHERE date = CURDATE()";
+        
+        Connection con = connector.getConnection();
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        
+        pstmt.setDate(2, Date.valueOf(date));
+        
+        ResultSet rs = pstmt.executeQuery();
+        return rs.next();
     }
 
     public void addKey(String todaysKey, LocalDate dateNow) throws SQLServerException, SQLException
