@@ -1,4 +1,4 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -45,44 +45,38 @@ public class TeachersGenerateKeyWindowController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
     MainModel model;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showDate();
         model = new MainModel();
-    }    
-    
-    @FXML
-    private void clickSaveNewKey(ActionEvent event) throws IOException 
-    {
-        insertTodaysKey();
     }
-    
-    private boolean isTodayDateInDatabase()
-    {
+
+    @FXML
+    private void clickSaveNewKey(ActionEvent event) throws IOException {
+        if (!isTodayDateInDatabase()) {
+            insertTodaysKey();
+        } else {
+            setUpAlert("Key was already generated", "You already generated key for today");
+        }
+    }
+
+    private boolean isTodayDateInDatabase() {
         return model.checkTodaysDateInDB();
     }
-    
-    private void insertTodaysKey() throws IOException
-    {
-        if(isTodayDateInDatabase())
-        {
+
+    private void insertTodaysKey() throws IOException {
         String todaysKey = txtNewKey.getText().trim();
         LocalDate dateNow = LocalDate.now();
         model.insertKey(todaysKey, dateNow);
         txtNewKey.clear();
         setUpAlert("Success", "Todays Key is generated");
         goBack();
-        } else{
-            setUpAlert("Key was already generated", "You already generated key for today");
-        }
     }
 
     @FXML
-    private void clickBack(ActionEvent event) throws IOException 
-    {
+    private void clickBack(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
@@ -91,9 +85,8 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         s.show();
         closeWindow();
     }
-    
-    private void goBack() throws IOException 
-    {
+
+    private void goBack() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceproject/gui/view/TeachersChoiceWindow.fxml"));
         Parent z = loader.load();
         Scene scene = new Scene(z);
@@ -102,43 +95,38 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         s.show();
         closeWindow();
     }
-    
-    
-    
-    private void closeWindow() 
-    {
+
+    private void closeWindow() {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
     }
 
     @FXML
-    private void closeApp(ActionEvent event) 
-    {
+    private void closeApp(ActionEvent event) {
         Platform.exit();
     }
 
-    public void showDate() 
-    {
+    public void showDate() {
         Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat ("dd/MM/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         lblTodaysDate.setText(dateFormat.format(date));
     }
-    
-    private void setUpAlert(String title, String message){
-        
+
+    private void setUpAlert(String title, String message) {
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(message);
         alert.showAndWait();
     }
-    
+
     @FXML
-    private void readAboutApp(ActionEvent event) throws IOException{
-        setUpAlert("About" , "On this window you can generate a key");
+    private void readAboutApp(ActionEvent event) throws IOException {
+        setUpAlert("About", "On this window you can generate a key");
     }
 
     @FXML
     private void cantGenerateAKey(ActionEvent event) {
     }
-  
+
 }

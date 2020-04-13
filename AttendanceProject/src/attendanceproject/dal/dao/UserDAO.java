@@ -113,13 +113,20 @@ public class UserDAO {
 
     public boolean checkTodaysDateInDB() throws SQLException 
     {
-        String sql = "SELECT * FROM [dbo].[User] WHERE date = GETDATE()";
+        String sql = "SELECT * FROM [dbo].[KeyHold] WHERE [date] =  CONVERT (date, GETDATE()) ";
         
         Connection con = connector.getConnection();
         PreparedStatement pstmt = con.prepareStatement(sql);
         
         ResultSet rs = pstmt.executeQuery();
-        return rs.next();
+        
+        boolean isTrue = false;
+        
+        if(rs.next()){
+            isTrue=true;
+        }
+        
+        return isTrue;
     }
 
   
