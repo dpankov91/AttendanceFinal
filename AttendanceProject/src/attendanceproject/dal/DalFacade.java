@@ -29,5 +29,7 @@ public interface DalFacade {
     public List getAllDateForStudent(User us);
 
     public boolean checkTodaysDateInDB();
+
+    public String getLastKey();
     
 }

@@ -73,8 +73,9 @@ public class MainModel
         return studentData;
     }
 
-    public String getLastKey() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getLastKey() 
+    {
+        return facade.getLastKey();
     }
 
     public boolean checkTodaysDateInDB() 

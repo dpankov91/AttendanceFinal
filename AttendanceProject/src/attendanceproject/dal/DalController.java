@@ -106,6 +106,17 @@ public class DalController implements DalFacade {
         return false;
     }
 
+    @Override
+    public String getLastKey() 
+    {
+        try {
+            return userDao.getLastKey();
+        } catch (SQLException ex) {
+            Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
    
 
 }

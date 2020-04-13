@@ -129,6 +129,23 @@ public class UserDAO {
         return isTrue;
     }
 
+    public String getLastKey() throws SQLException 
+    {
+        String sql = "SELECT [key] FROM [dbo].[KeyHold] WHERE [date] = CONVERT (date, GETDATE())";
+        
+        Connection con = connector.getConnection();
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        
+        while(rs.next()){
+            String lastKey = rs.getString("key");
+            return lastKey;
+        }
+        
+        return null;
+        
+    }
+
   
 
 }

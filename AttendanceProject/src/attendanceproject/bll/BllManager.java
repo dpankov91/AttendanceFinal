@@ -73,5 +73,10 @@ public class BllManager implements BllFacade{
     public boolean checkTodaysDateInDB() {
         return dalFacade.checkTodaysDateInDB();
     }
+
+    @Override
+    public String getLastKey() {
+        return dalFacade.getLastKey();
+    }
     
 }
