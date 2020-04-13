@@ -25,5 +25,7 @@ public interface BllFacade {
     List<User> getAllStudents();
 
     public List getAllDateForStudent(User us);
+
+    public boolean checkTodaysDateInDB();
     
 }

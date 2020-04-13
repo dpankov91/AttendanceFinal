@@ -68,5 +68,10 @@ public class BllManager implements BllFacade{
     public List getAllDateForStudent(User us) {
       return dalFacade.getAllDateForStudent(us);
     }
+
+    @Override
+    public boolean checkTodaysDateInDB() {
+        return dalFacade.checkTodaysDateInDB();
+    }
     
 }

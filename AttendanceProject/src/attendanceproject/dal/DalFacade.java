@@ -27,5 +27,7 @@ public interface DalFacade {
     public List<User> getAllStudets();
 
     public List getAllDateForStudent(User us);
+
+    public boolean checkTodaysDateInDB();
     
 }

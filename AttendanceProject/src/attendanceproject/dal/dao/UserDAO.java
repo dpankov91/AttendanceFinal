@@ -59,19 +59,6 @@ public class UserDAO {
         return us;
         }
     }
-    
-    public boolean checkForTodaysDate(LocalDate date) throws SQLException
-    {
-        String sql = "SELECT * FROM [dbo].[KeyHold] WHERE date = CURDATE()";
-        
-        Connection con = connector.getConnection();
-        PreparedStatement pstmt = con.prepareStatement(sql);
-        
-        pstmt.setDate(2, Date.valueOf(date));
-        
-        ResultSet rs = pstmt.executeQuery();
-        return rs.next();
-    }
 
     public void addKey(String todaysKey, LocalDate dateNow) throws SQLServerException, SQLException
     {
@@ -123,5 +110,18 @@ public class UserDAO {
     specifiedData.add(new AttendanceData( LocalDate.now()  , false));
     return specifiedData;
     }
+
+    public boolean checkTodaysDateInDB() throws SQLException 
+    {
+        String sql = "SELECT * FROM [dbo].[User] WHERE date = GETDATE()";
+        
+        Connection con = connector.getConnection();
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        
+        ResultSet rs = pstmt.executeQuery();
+        return rs.next();
+    }
+
+  
 
 }

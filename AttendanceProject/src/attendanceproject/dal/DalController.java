@@ -95,6 +95,17 @@ public class DalController implements DalFacade {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public boolean checkTodaysDateInDB() 
+    {
+        try {
+            return userDao.checkTodaysDateInDB();
+        } catch (SQLException ex) {
+            Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
    
 
 }

@@ -76,5 +76,10 @@ public class MainModel
     public String getLastKey() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public boolean checkTodaysDateInDB() 
+    {
+        return facade.checkTodaysDateInDB();
+    }
     
 }

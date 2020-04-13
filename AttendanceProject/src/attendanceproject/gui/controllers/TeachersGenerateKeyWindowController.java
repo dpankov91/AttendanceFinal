@@ -60,9 +60,14 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         insertTodaysKey();
     }
     
+    private boolean isTodayDateInDatabase()
+    {
+        return model.checkTodaysDateInDB();
+    }
+    
     private void insertTodaysKey() throws IOException
     {
-        if(txtNewKey.getText().trim().length() > 3)
+        if(isTodayDateInDatabase())
         {
         String todaysKey = txtNewKey.getText().trim();
         LocalDate dateNow = LocalDate.now();
@@ -71,7 +76,7 @@ public class TeachersGenerateKeyWindowController implements Initializable {
         setUpAlert("Success", "Todays Key is generated");
         goBack();
         } else{
-            setUpAlert("Too short key", "Key must be at least 3 letters.");
+            setUpAlert("Key was already generated", "You already generated key for today");
         }
     }
 
