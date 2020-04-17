@@ -37,16 +37,14 @@ public class LogInWindowController implements Initializable {
     private JFXTextField txtUsername;
     @FXML
     private JFXPasswordField txtPassword;
-    private MainModel model;
-   
+    MainModel model;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-  
-        this.model = new MainModel();
+        model = MainModel.getInstance();
     }    
 
     @FXML

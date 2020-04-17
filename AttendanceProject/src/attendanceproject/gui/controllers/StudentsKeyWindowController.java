@@ -13,6 +13,8 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -52,7 +54,7 @@ public class StudentsKeyWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        model = new MainModel();
+        model = MainModel.getInstance();
         btnConfirmStudents.setId("btnConfirmStudents");
     }
 
@@ -75,17 +77,20 @@ public class StudentsKeyWindowController implements Initializable {
 
     @FXML
     private void clickEnterTodaysKey(ActionEvent event) {
-        /*boolean isKeyCorrect = model.confirmKey(txtTodaysKey.getText());
-        if (isKeyCorrect) {
-            //show alert that attendance is confirmed
-        } else {
-            //show alert that user entered incorrect key
-        }*/
-        
+    
         String enteredKey = txtTodaysKey.getText();
         String lastDbKey = model.getLastKey();
         
-        if(enteredKey.equals(lastDbKey) ){
+        
+        if(enteredKey.equals(lastDbKey))
+        {
+            /*String fName = 
+            String lName = 
+            Integer userId =
+            boolean present = true;
+            LocalDate date = LocalDate.now();
+            
+            model.confirmAttendanceInDB(fName, lName, userNameId, present, date);*/
             
         }
         else{

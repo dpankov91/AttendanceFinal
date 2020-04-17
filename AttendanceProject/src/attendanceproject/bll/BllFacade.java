@@ -29,5 +29,7 @@ public interface BllFacade {
     public boolean checkTodaysDateInDB();
 
     public String getLastKey();
+
+    public void confirmAttendanceInDB();
     
 }

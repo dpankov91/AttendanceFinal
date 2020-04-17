@@ -12,12 +12,55 @@ import java.time.LocalDate;
  * @author hp
  */
 public class AttendanceData {
+    
+    private String fName;
+    private String lName;
+    private int userId;
+    private boolean present;
     private LocalDate date;
-    private boolean Status;
 
-    public AttendanceData(LocalDate date, boolean Status) {
+    public AttendanceData(String fName, String lName, int userId, boolean present, LocalDate date) {
+        this.fName = fName;
+        this.lName = lName;
+        this.userId = userId;
+        this.present = present;
         this.date = date;
-        this.Status = Status;
+    }
+
+    public AttendanceData(LocalDate now, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public boolean isPresent() {
+        return present;
+    }
+
+    public void setPresent(boolean present) {
+        this.present = present;
     }
 
     public LocalDate getDate() {
@@ -27,13 +70,9 @@ public class AttendanceData {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+    
+    
 
-    public boolean isStatus() {
-        return Status;
-    }
-
-    public void setStatus(boolean Status) {
-        this.Status = Status;
-    }
+    
     
 }

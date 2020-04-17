@@ -49,7 +49,7 @@ public class StudentsOverviewWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        model = new MainModel();
+        model = MainModel.getInstance();
         setUpTableView();
     }
 

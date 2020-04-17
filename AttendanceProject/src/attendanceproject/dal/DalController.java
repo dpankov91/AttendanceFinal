@@ -117,6 +117,16 @@ public class DalController implements DalFacade {
         return null;
     }
 
+    @Override
+    public void confirmAttendanceInDB() 
+    {
+        try {
+            userDao.confirmAttendanceInDB();
+        } catch (SQLException ex) {
+            Logger.getLogger(DalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
    
 
 }

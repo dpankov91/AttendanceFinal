@@ -31,5 +31,7 @@ public interface DalFacade {
     public boolean checkTodaysDateInDB();
 
     public String getLastKey();
+
+    public void confirmAttendanceInDB();
     
 }

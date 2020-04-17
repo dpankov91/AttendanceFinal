@@ -146,6 +146,25 @@ public class UserDAO {
         
     }
 
+    public void confirmAttendanceInDB() throws SQLException 
+    {
+        /*String sql ="INSERT INTO [dbo].[AttendanceTracker] ([Fname], [Lname], [usernameID], [present], [date]) VALUES (?,?,?,?,?)";
+        
+        Connection con = connector.getConnection();
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        
+        for()
+        
+        Date date = java.sql.Date.valueOf(date);
+        
+        pstmt.setString(1, fName);
+        pstmt.setString(2, sName);
+        pstmt.setInt(3, userId);
+        pstmt.setBoolean(4, true);
+        pstmt.setDate(5, date);*/
+
+    }
+
   
 
 }

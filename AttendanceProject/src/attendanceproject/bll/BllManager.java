@@ -65,18 +65,27 @@ public class BllManager implements BllFacade{
     }
 
     @Override
-    public List getAllDateForStudent(User us) {
+    public List getAllDateForStudent(User us) 
+    {
       return dalFacade.getAllDateForStudent(us);
     }
 
     @Override
-    public boolean checkTodaysDateInDB() {
+    public boolean checkTodaysDateInDB() 
+    {
         return dalFacade.checkTodaysDateInDB();
     }
 
     @Override
-    public String getLastKey() {
+    public String getLastKey() 
+    {
         return dalFacade.getLastKey();
+    }
+
+    @Override
+    public void confirmAttendanceInDB() 
+    {
+       dalFacade.confirmAttendanceInDB();
     }
     
 }

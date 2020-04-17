@@ -25,10 +25,16 @@ public class MainModel
     private ObservableList<User> students = FXCollections.observableArrayList();
     private ObservableList<AttendanceData> studentData = FXCollections.observableArrayList();
     
-    public MainModel() 
-    {
-    this.facade = new BllManager();
+    static MainModel model = new MainModel();
+    
+    private MainModel(){
+        this.facade = new BllManager();
     }
+    
+    public static MainModel getInstance(){
+        return model;
+    }
+            
     
     public User loginUser(String username, String password)
     {
@@ -81,6 +87,11 @@ public class MainModel
     public boolean checkTodaysDateInDB() 
     {
         return facade.checkTodaysDateInDB();
+    }
+
+    public void confirmAttendanceInDB() 
+    {
+        facade.confirmAttendanceInDB();
     }
     
 }
